@@ -1,0 +1,18 @@
+Sisällys:
+
+Johdanto:
+- miksi tehdä metodiin keskittyvä gradu <-> digihumanismi
+- tutkimuskysymykset
+- aineisto (lähdekritiikki)
+Menetelmä verkostoanalyysi:
+- menetelmän lähtökohdat, historia ja kehitys
+- mihin nykyinen verkostoanalyysi perustuu
+- mitä se vaatii
+- työkalut (Gephi, sen algoritmit ja tilastotyökalut)
+Toteutus:
+- käytännön toteutus
+- ongelmia mm. layout algoritmin valinta, iteraatiot eri algoritmeilla ym.
+- vertaaminen aiempaan Karosen artikkeliin
+Päätäntö:
+- mitä verkostoanalyysi antaa historiantutkimukselle
+

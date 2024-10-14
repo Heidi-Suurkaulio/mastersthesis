@@ -1,0 +1,77 @@
+% !TeX spellcheck = en_US
+\documentclass[a4paper,12pt]{article}
+\usepackage[english]{babel}
+\usepackage{setspace}
+\usepackage[backend=bibtex, style=chicago-authordate]{biblatex}
+\addbibresource{research_plan.bib}
+
+%opening
+\title{Research Plan}
+\author{Heidi Suurkaulio}
+
+\begin{document}
+
+\maketitle
+\begin{onehalfspace}
+
+\section{Research questions}
+In my master's thesis I am applying a network analysis on the family ties between the members of the Swedish Council of the Realm\footnote{Fin: valtaneuvosto, Swe: riksrådet} from 1523 to 1680. The main focus of this study is to assess the adequacy of the network analysis on the study of pre-modern history, however, the wider scope is on the general discussion of the methodology of digital humanities. 
+
+My research questions are:
+\begin{enumerate}
+	\item Can network analysis reveal some new or unseen patterns in the affiliations between Swedish Councilors of the Realm? 
+	\item What are the potential difficulties and pitfalls in the implementation and interpretation of network analysis in the field of history?
+\end{enumerate}   
+
+The methods of digital humanities have hit the mainstream of Finnish historical research during the last few decades. In the 2010's textbooks and monographs of the methods and theories of digital humanities strated to emerge, for example, a textbook about methods useful for the study and analysis of the internet \textit{Otteita verkosta: verkon ja sosiaalisen median tutkimusmenetelmät} in 2013, or a more general approach to the methods of digital humanities in the field of history \textit{Digitaalinen humanismi ja historiatieteet} in 2016. At this point in time the methods of digital humanities are met with a certain excitement of novelty, however, many of the methods in use are actually built on the basic concepts of statistics e.g. corpus analysis, clustering and the familiar network analysis. To critically use those methods needs a conceptual understanding on the presumptions and premises of the methods, such as underlying expectations of distributions or null hypothesis testing. In my master's thesis I will be considering these themes through performing the network analysis on the historical data.
+
+\section{Methods and sources}
+In my research I am using \textit{Swedish Councilors of the Realm, 1523-1680} dataset which is found in JYX Digital Repository under the license CC BY 4.0. The dataset is collected by Marko Hakanen and Ulla Koskinen. 
+
+The dataset consists of 257 Swedish councilors of the realm\footnote{Fin: valtaneuvos, Swe: riksråd}. Each councilor has the following feature attributes: Id number, date of birth, year of death, year of appointment, date of appointment, age of appointment, noble rank, family members in the council of the realm and spouse(s) / father's spouse with the date of marriage. In the process of building the network, my focus is in the individual's family members in the council of the realm. 
+
+Jukka Huhtamäki and Olli Parviainen describe the process of network analysis as following: 1) deciding whether or not the network analysis is feasible 2) collecting the data 3) preparing and processing the data 4) implementing the network analysis 5) choosing the right layout for the network.\footcite[p. 258 - 264.]{verkostanalyysisome} In this case the dataset is already chosen, and the family links between the members of the council of the realm can be interpreted as a network, the next step is the preparation and processing of the data. I am using Python programming language to extract the data in the right format. For applying the network analysis and choosing the layout I will be using software package called Gephi. The Python script and settings in the Gephi environment will be available in GitHub for the purpose of allowing subsequent replication.
+
+Network analysis can be understood as an umbrella term for methods which are developed to survey and model dependencies between different kind of entities. As a method it is not a new one either, its roots can be traced back to the mid 18th century in the mathematical \textit{graph theory}, and it has been utilized in the study of social networks for decades now. Modern network analysis combines elements from the fields of social sciences, statistics and mathematics.\footcite[p. 246 - 247.]{verkostanalyysisome} Internationally historical network research has its own scientific community and journal.\footcite{hnr}
+
+In practice I will be performing the network analysis by entering the data on the software and visualizing the graph, calculating certain statistics and testing different permutations of the edges\footnote{Links between the nodes on the graph. In this case the family ties between the councilors.} of the graph. Later I will be assessing the results in the context of the previous historical research. 
+
+\section{Disposition}
+
+Preliminary disposition for the master's thesis.
+
+\begin{enumerate}
+	\item Introduction \begin{itemize}
+		\item What I am doing?
+		\item Research questions
+		\item Why I study network analysis and some further discussion on the hype around digital humanities
+		\item Sources / Dataset (source criticism) \end{itemize}
+	\item Method: network analysis \begin{itemize}
+		\item Where does network analysis come from?
+		\item How does network analysis work, what are it requirements for the data?
+		\item tools: Gephi: its algorithms and statistical tools and Python programming language \end{itemize}
+	\item Analysis: \begin{itemize}
+		\item Implementation of the network analysis
+		\item Problem solving: which layout algorithm to choose, which connections to include in the network etc. 
+		\item Statistical description of the network \end{itemize}
+	\item Conclusion
+\end{enumerate}
+\end{onehalfspace}
+
+\section{Literature}
+\begin{description}
+	\item Brandes, Ulrik; Thomas, Erlebach. \textit{Network Analysis: Methodological Foundations}. Berlin, Heidelberg: Springer Berlin Heidelberg, 2005. https://doi.org/10.1007/b106453.
+	\item Cherven, Ken. \textit{Mastering Gephi Network Visualization: Produce Advanced Network Graphs in Gephi and Gain Valuable Insights into Your Network Datasets}. Packt Publishing, 2015. 
+	\item Elo, Kimmo. \textit{Digitaalinen Humanismi Ja Historiatieteet}. Turku: Turun historiallinen yhdistys, 2016. 
+	\item Fu, Xiaoming; Jar-Der, Luo; Boos, Margarete.\textit{Social Network Analysis: Interdisciplinary Approaches and Case Studies}. Boca Raton, FL: CRC Press, 2017.
+	\item Haikari, Janne, et al. \textit{Aatelin Historia Suomessa}. Helsinki: Kustannusosakeyhtiö Siltala, 2020.
+	\item Karonen, Petri, et al. \textit{Hopes and Fears for the Future in Early Modern Sweden, 1500-1850}. Helsinki: Finnish Literature Society, 2009.  
+	\item Knoke, David; Song, Yang. \textit{Social Network Analysis}. 2nd ed. Los Angeles, [Calif.] ; London: SAGE, 2008. 
+	\item Laaksonen, Salla-Maaria, et al. \textit{Otteita Verkosta: Verkon Ja Sosiaalisen Median Tutkimusmenetelmät}. Tampere: Vastapaino, 2013.
+	\item Lamberg, Marko, et al. \textit{Physical and Cultural Space in Pre-industrial Europe: Methodological Approaches to Spatiality}. Lund: Nordic Academic Press, 2011.
+	\item Raj P.M., Krishna; Ankith, Mohan; Srinivasa, K.G.\textit{Practical Social Network Analysis with Python}. Cham: Springer International Publishing, 2018. https://doi.org/10.1007/978-3-319-96746-2. 
+\end{description}
+
+\printbibliography
+
+\end{document}
