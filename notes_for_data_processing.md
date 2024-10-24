@@ -7,3 +7,5 @@
 - How to verify that the data has been processed correctly (connections are to the right person), forever problem in programming and data science
 
 - Found some 'ghost' nodes e.g. Id: 147, why?
+
+- Where is "Lillienstedt, Johan (1655-1732) is he one of the "ghosts"
