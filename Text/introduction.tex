@@ -2,6 +2,7 @@
 \usepackage[english]{babel}
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
+\usepackage{graphicx} %for table
 \usepackage[backend=bibtex, style=chicago-authordate]{biblatex}
 \addbibresource{mastersthesis.bib}
 %whenever Islandic names
@@ -56,6 +57,35 @@ When it comes to the literature discussing the Swedish Council of the Realm, it 
 Authors of the Councilors dataset, Hakanen and Koskinen, have explained the dataset's background in their article \textit{The Gentle Art of Counseling Monarchs (1560-1655)}. In their study the council is approached through the concept of personal agency.\footcite{HakanenAKoskinen2017} In the article, Hakanen and Koskinen also mention some prior collection and utilisation of datasets on the study of said councilors and their networks. Namely, Jan Samuleson has listed councilors and their affiliations from years 1523 – 1611, Kurt Ågren has collected councilors and their families from years 1602 – 1647, and Björn Asker made a similar collection from years 1640 – 1680. Unfortunately, some of the datasets remain unpublished.\footcite[p. 48, 67 (cite 4).]{HakanenAKoskinen2017} 
 
 All in all, computer-aided historical network analysis is somewhat rare compared to the traditional methods of historiography. Nevertheless, it also seems that the pre-modern elite is collectively understood as a network amongst historians, and the ties between the members of nobility have been in the scope of interest for some time now. Which makes applying the computer-aided network analysis relevant. The aim of this work is to join the rather uncommon method of historical network analysis with the classic research topic, and to further explore and develop the method in the context of historical research.
+
+\subsection{the Council of the Realm}
+
+\subsection{Sources}
+As mentioned above, this work is based on the \textit{Swedish Councillors of the Realm, 1523-1680} -dataset authored by Marko Hakanen and Ulla Koskinen. The dataset was published in 2017 and can be found in Digital repository of Univeristy of Jyväskylä under the license CC BY 4.0. The dataset was collected as a part of the research conducted for the anthology \textit{Personal Agency at the Swedish Age of Greatness 1560–1720}.
+
+The dataset consists of information from 257 Swedeish councilor of the realm. Each councilor has the following feature attributes: date of birth, year of death, year, date and age of appointment, noble rank, spouse(s) along with father's spouse and the individual's family links between other councilors. The councilors are identified with their full name and id number.\footcites[p. 48.]{HakanenAKoskinen2017}{councilorsDS}
+
+\begin{table}[h]
+	\centering
+	\caption{Example rows of the dataset: Gyllenhorn, Joen Olsson and Natt och Dag, Måns Johansson} 
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c | c | c | c | c | c | c | c | c | c|}
+			\hline
+			Name & No. & D.O.B. & † & Appointed & Date & Age & Noble rank & Family members in the council & Spouse(s) / Father of Spouse / Date of Marriage \\ 
+			\hline
+			Gyllenhorn, Joen Olsson & 82 & & 1556 & 1529 & 00.6. & & Uradel (Ancient Nobility) & Son-in-law 44 & Karin Bese/Nils Nilsson Bese/1529 \\
+			\hline
+			Natt och Dag, Måns Johansson & 142 & 1498 & 1555 & 1529 & 00.6. & 31 & Uradel (Ancient Nobility) & & Barbro Eriksdotter/Erik Turesson Bielke/ probably 27.6.1524 \\
+			\hline
+	\end{tabular}%
+}
+\end{table}
+ 
+Hakanen and Koskinen have compiled the data from secondary sources such as biographical registers and databases, biography collections, lineage databases and research literature. The dataset's sources are listed in the dataset and in the article written by Hakanen and Koskinen, those include for instance Nordic Family Book (Nordisk familjebok), National Biography of Finland (Finlands nationalbiografi, Kansallisbiografia), genealogies of old Swedish aristocratic families (Äldre svenska frälsesläkter) and further refereed literature.\footcites[p. 48, 76]{HakanenAKoskinen2017}{councilorsDS} As reported by Hakanen and Koskinen the dataset is collected using methodologies of collective biography, new prosopography and source criticism.\footcite[p. 48.]{HakanenAKoskinen2017}
+  
+Even though reliable, general problems of missing data and human errors. Ghosts.
+
+Furthermore my work is meta analysis. Compare to the work of Elo and Lintunen, Elo and Kleemola e.g.
 
 \printbibliography
 %\subsection{Sources}
