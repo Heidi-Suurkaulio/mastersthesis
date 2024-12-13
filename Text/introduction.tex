@@ -61,13 +61,17 @@ All in all, computer-aided historical network analysis is somewhat rare compared
 \subsection{the Council of the Realm}
 
 \subsection{Sources}
-As mentioned above, this work is based on the \textit{Swedish Councillors of the Realm, 1523-1680} -dataset authored by Marko Hakanen and Ulla Koskinen. The dataset was published in 2017 and can be found in Digital repository of Univeristy of Jyväskylä under the license CC BY 4.0. The dataset was collected as a part of the research conducted for the anthology \textit{Personal Agency at the Swedish Age of Greatness 1560–1720}.
+Since this work is conducted with preliminarily collected dataset, this work can be categorised as secondary analysis. Secondary analysis meaning the re-analysing the data with new research questions or approaches, while primary analysis involves the collection of the data. Secondary analysis can alse be discern from meta analysis, which means comparing multiple previous researches (usally with quantitative methods) to create a synthesis on a certain question.\footcite[p. 4-5.]{meta-analysis} 
 
-The dataset consists of information from 257 Swedeish councilor of the realm. Each councilor has the following feature attributes: date of birth, year of death, year, date and age of appointment, noble rank, spouse(s) along with father's spouse and the individual's family links between other councilors. The councilors are identified with their full name and id number.\footcites[p. 48.]{HakanenAKoskinen2017}{councilorsDS}
+On the contrary in their articles Kimmo Elo and Olli Kleemola or Elo and Tiina Lintunen applies a network analysis on their own primary datasets.\footcites{eloAklee15}{LintunenAndElo2019} However, in the case of this work the benefit of doing secondary analysis is that the focus can be on the implementation and assessment of the method. Furthermore, the existing dataset will be automatically and manually re-examined for possible errors in the process, as will be discussed soon. 
+
+As mentioned earlier, this work is based on the \textit{Swedish Councilors of the Realm, 1523-1680} -dataset authored by Marko Hakanen and Ulla Koskinen. The dataset was published in 2017 and can be found in Digital repository of University of Jyväskylä under the license CC BY 4.0. The dataset was collected as a part of the research conducted for the anthology \textit{Personal Agency at the Swedish Age of Greatness 1560–1720}.
+
+The dataset consists of information from 257 Swedish councilor of the realm. Each councilor has the following feature attributes: date of birth, year of death, year, date and age of appointment, noble rank, spouse(s) along with father's spouse and the individual's family links between other councilors. The councilors are identified with their full name and id number.\footcites[p. 48.]{HakanenAKoskinen2017}{councilorsDS}
 
 \begin{table}[h]
 	\centering
-	\caption{Example rows of the dataset: Gyllenhorn, Joen Olsson and Natt och Dag, Måns Johansson} 
+	\caption{Example rows of the dataset: Gyllenhorn, Joen Olsson and Natt och Dag, Måns Johansson (\cite{councilorsDS})} 
 	\resizebox{\textwidth}{!}{%
 		\begin{tabular}{|c | c | c | c | c | c | c | c | c | c|}
 			\hline
@@ -81,11 +85,13 @@ The dataset consists of information from 257 Swedeish councilor of the realm. Ea
 }
 \end{table}
  
-Hakanen and Koskinen have compiled the data from secondary sources such as biographical registers and databases, biography collections, lineage databases and research literature. The dataset's sources are listed in the dataset and in the article written by Hakanen and Koskinen, those include for instance Nordic Family Book (Nordisk familjebok), National Biography of Finland (Finlands nationalbiografi, Kansallisbiografia), genealogies of old Swedish aristocratic families (Äldre svenska frälsesläkter) and further refereed literature.\footcites[p. 48, 76]{HakanenAKoskinen2017}{councilorsDS} As reported by Hakanen and Koskinen the dataset is collected using methodologies of collective biography, new prosopography and source criticism.\footcite[p. 48.]{HakanenAKoskinen2017}
+Hakanen and Koskinen have compiled the data from secondary sources such as biographical registers and databases, biography collections, lineage databases and research literature. The dataset's sources are listed in the dataset and in the article written by Hakanen and Koskinen, those include for instance Nordic Family Book (Nordisk familjebok), National Biography of Finland (Finland's nationalbiografi, Kansallisbiografia), genealogies of old Swedish aristocratic families (Äldre svenska frälsesläkter) and further refereed literature.\footcites[p. 48, 76]{HakanenAKoskinen2017}{councilorsDS} As reported by Hakanen and Koskinen the dataset is collected using methodologies of collective biography, new prosopography and source criticism.\footcite[p. 48.]{HakanenAKoskinen2017}
   
-Even though reliable, general problems of missing data and human errors. Ghosts.
+Even though the dataset can be assessed reliable and generally accurate, there is the general problem of some missing data. As seen in the example of table 1, some of the councilors have missing attributes such as date of birth and therefore age of appointment. Missing birthdays may simply be due the fact that in the pre-modern era there was no standard to record birthdays, and sometimes even the birthdays and ages of royal family members, whose lives have been mainly well documented, must be assessed by historians.(TODO source) However, the focus of this work is not in the ages of the councilors but in their affiliations, so, the more relevant question is whether or not there are missing family links. 
 
-Furthermore my work is meta analysis. Compare to the work of Elo and Lintunen, Elo and Kleemola e.g.
+(TODO write script and do some checking)
+
+As the relatively large dataset is compiled by humans, it leaves some room for typos and errors. While producing the first experimental graph of the dataset, there were found some empty data points These "ghosts" were nodes with only id number and one or two links to the other councilors. All in all there were four "ghosts" with the id numbers 147 (linked to 18 and 152), 215 (linked to 217), 249 (linked to 269) and 254 (linked to 94). With the help of Marko Hakanen it was resolved that those "ghost" nodes were data points removed from the dataset as the authors found out they have not been official councilors, however, some references to their id numbers had been left to the dataset by accident. The "ghost" nodes will be removed from the latter graphs.
 
 \printbibliography
 %\subsection{Sources}
