@@ -12,14 +12,16 @@
 - computer aided network analysis <- distinction between 'verkostotutkimus' mentioned in Juuso Marttila's thesis. 
 Quite a few textbooks have been written on network analysis.
 
+Furthermore, in the field of technology network analysis does have some everyday application, such as the analysis of the internet. 
+
 \subsection{Defining the network}
 Network analysis is based on the mathematical graph theory. A graph is a representation of the network. Graph includes nodes and edges.
 
 \begin{figure}[h]
+	\includegraphics[scale=0.25]{example_network.drawio.png}
+	\centering
 	\caption{A sample from the graph} 
 	\centering
-	\includegraphics[scale=0.25]{example_network.drawio.png}
-	\centering	
 \end{figure}
 In this context the graph's nodes depict individual councilors with the input of name and id number. Correspondingly the edges represent the kinships between two nodes. For instance, in Figure 1 we can see that Johan Bengtsson (Schroderus) Skytte (id 184) is Bengt Johansson Skytte's (id 183) father and a maternal grandfather for Johan Göransson Gyllenstierna (id 90) and Göran Göransson Gyllenstierna (id 87). Johan Göransson and Göran Göransson are brothers, however, their father is not mentioned in the dataset. Göran Göransson also has further links in the network. \footfullcite{councilorsDS} 
 
@@ -37,8 +39,71 @@ Both of these tools are also open source and free to download.
 
 All scripts written for this work available on github.
 
-How the data was processed, removing the end of the dataset with calc tools TODO add also to the source section about the end
+
+
+\subsubsection{Test run}
+TODO add also to the source section about the end
+
+To draft the structure of the graph and understand the nuances of the given data a test run was carried out. The test run was done with a simple Python script, and no attention was paid to the temporal aspects of the network or the potential directions in the graph. The scripts and Gephi project of the test run is available in GitHub in the TestRun folder\footnote{TODO link}, the visualisation of the test run graph can be found in the appendix (TODO put them there!)
+
+The data processing was started by manually cleaning the data in LibreOffice Calc (eqvivalent to Microsoft Excel). The columns and rows containing information of the source material of the dataset and councilor's years active were removed. That made the structure of the data coherent and easier to manipulate with the Python script. The manually cleaned data is exported as .csv (comma separated values) file. The .csv file's header (the first line of the file) should be modified so that the column name "No." is changed to "Id" and "Family members in the council of the realm" is changed to "Family", the frist one can cause an error if referenced in the Python code, the latter is inconveniently long. 
+
+\begin{table}[h]
+	\caption{Example of the raw .csv file}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{cccccccccp{1.5in}p{1.5in}}
+			\hline
+			1 &Name; &Id; &D.O.B.; &died; &Appointed; &Date; &Age; &Noble rank; &Family; &Spouse(s) / Father of Spouse / Date of Marriage \\
+			\hline
+			
+			2 &Ingemar Petri; &162; &; &1530; &1495; &; &; &Estate unknown, Bishop; &; &; \\
+			\hline
+			3 &Tre Rosor, Ture Jönsson; &231; &; &1532; &1497; &; &; &Uradel (Ancient Nobility); &Father CR, Father-in-law CR, Sons 228, 230, Son (illegitimate) 175; &Anna Johansdotter/ Johan Christiernsson Vasa (CR) \\
+			\hline
+		\end{tabular}%
+	}
+\end{table}
+
+The script itself reads the data from the .csv file. The connections between the councilors are separated from the "Family" column, based on the knowledge that each connection is marked with the id number of another councilor. The connections are then formatted and printed to .csv file. The connections .csv file containing values for "Source" id of the source concilor, "Target" id of target councilor, "Type" standard "Undirected", "Id" id number for the conncetion, "Weight" standard 1.0. Another .csv file is formatted and printed with the information of concilors' names and id numbers.
+
+\begin{table}[h]
+	\caption{Example of the connections .csv file}
+	\centering
+	\begin{tabular}{cccccc}
+		\hline
+		1 &Source, &Target, &Type, &Id, &Weight \\
+		\hline
+		2 &231, &228, &Undirected, &0, &1.0 \\
+		\hline
+		3 &231, &230, &Undirected, &1, &1.0 \\
+		\hline
+	\end{tabular}
+\end{table}
+\begin{table}[h]
+	\caption{Example of the concilors .csv file}
+	\centering
+	\begin{tabular}{ccc}	
+		\hline
+		1 &Id; &Label \\
+		\hline
+		2 &162; &Ingemar Petri \\
+		\hline
+		3 &231; &Tre Rosor, Ture Jönsson \\
+		\hline
+	\end{tabular}
+\end{table}
+
+These .csv files are readable for Gephi. The outcome was an undirected graph of the councilors' affiliation network that had cumulated during the 160 years. The graph consisted of nodes and edges (TODO numbers). The test run revealed two problems within the graph, first of which is the emergence of the empty "ghost" nodes and the another is that some edges are duplicated. 
+
+The "ghost" nodes were excess nodes with no name and only an id number and one or two connections in the graph. They were due the references for the datapoints removed from the original dataset, and therefore can be ignored, they are discussed further in the subsection sources. However, the more essential problem are the edge duplicates. The duplicates occur because one relationship, such as father and son, is sometimes marked twice in the dataset. For example, in the case of Göran Göransson Gyllenstierna (id 87) the relatives are "Maternal Grandfather 184, Brother 90, Father-in-law 3, ..." and the same relationship can be found in his grandfather's Johan Bengtsson (Schroderus) Skytte (id 184) links that are "Son 183, Grandson through daughter 87", yet, the connection to Göran Göransson's brother Johan Göransson Gyllenstierna (id 90) is not marked in the grandfathers links. This means that the node of Göran Göransson Gyllenstierna (id 87) has one excess link compared to his brother's node. 
+
+TODO picture
+
+The duplicate edges will cause bias to the calculation of the node degrees (TODO and other statistics)
+
+
 the test run and "first look " pdf
+test run problem: ghosts, duplicate connections
 
 Problems: we don't have data about the women
 
