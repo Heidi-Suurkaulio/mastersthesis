@@ -93,17 +93,27 @@ The script itself reads the data from the .csv file. The connections between the
 	\end{tabular}
 \end{table}
 
-These .csv files are readable for Gephi. The outcome was an undirected graph of the councilors' affiliation network that had cumulated during the 160 years. The graph consisted of nodes and edges (TODO numbers). The test run revealed two problems within the graph, first of which is the emergence of the empty "ghost" nodes and the another is that some edges are duplicated. 
+These .csv files are readable for Gephi. The outcome was an undirected graph of the councilors' affiliation network that had cumulated during the 160 years. The graph consisted of 261 nodes (257 real + 4 "ghosts") and 372 edges (including self loops and "ghost" nodes). The test run revealed three problems within the graph: the emergence of the empty "ghost" nodes, parallel edges and thridly self loops. 
 
-The "ghost" nodes were excess nodes with no name and only an id number and one or two connections in the graph. They were due the references for the datapoints removed from the original dataset, and therefore can be ignored, they are discussed further in the subsection sources. However, the more essential problem are the edge duplicates. The duplicates occur because one relationship, such as father and son, is sometimes marked twice in the dataset. For example, in the case of Göran Göransson Gyllenstierna (id 87) the relatives are "Maternal Grandfather 184, Brother 90, Father-in-law 3, ..." and the same relationship can be found in his grandfather's Johan Bengtsson (Schroderus) Skytte (id 184) links that are "Son 183, Grandson through daughter 87", yet, the connection to Göran Göransson's brother Johan Göransson Gyllenstierna (id 90) is not marked in the grandfathers links. This means that the node of Göran Göransson Gyllenstierna (id 87) has one excess link compared to his brother's node. 
+The "ghost" nodes were excess nodes with no name and only an id number and one or two connections in the graph. They were due to the references to the datapoints removed from the original dataset, and therefore can be ignored. The ghosts are discussed further in the subsection sources. However, the more essential problem are edge duplicates.
 
-TODO picture
+The edge duplicates occur because one relationship, such as father and son, is sometimes marked twice in the dataset. For example, in the case of Göran Göransson Gyllenstierna (id 87) the relatives are "Maternal Grandfather 184, Brother 90, Father-in-law 3, ...", and the parallel relationship is found in his grandfather's Johan Bengtsson (Schroderus) Skytte's (id 184) links: "Son 183, Grandson through daughter 87". Yet, the connection to Göran Göransson's brother Johan Göransson Gyllenstierna (id 90) is not marked in the grandfathers links. This means that the node of Göran Göransson Gyllenstierna (id 87) has one excess link compared to his brother's node. 
+
+\begin{figure}[h]
+	\includegraphics[scale=0.20]{double_link.drawio.png}
+	\centering
+	\caption{Visualisation of the parallel edge and self loop} 
+	\centering
+\end{figure}
 
 The duplicate edges will cause bias to the calculation of the node degrees (TODO and other statistics)
 
+Yifan Hu (default parameters except theta 2.0), noOverlap, manual checking and modification 
+
+self loops t.ex. 90 to 90 or 5 to 5
 
 the test run and "first look " pdf
-test run problem: ghosts, duplicate connections
+test run problem: ghosts, duplicate connections(?)
 
 Problems: we don't have data about the women
 
