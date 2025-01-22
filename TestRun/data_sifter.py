@@ -2,7 +2,7 @@ import pandas as pd
 from csv import writer
 import re
 
-dataset = pd.read_csv("Concilors_of_the_Realm.csv" ,sep=";")
+dataset = pd.read_csv("Councillors_of_the_Realm.csv" ,sep=";")
 
 #TODO consider using numbers of columns later on?
 nw_data = dataset[["Name", "Id", "Family"]].copy()
@@ -24,7 +24,7 @@ for index, entr in nw_data.iterrows():
             printable.append([entr.Id, o, "Undirected", i ,"1.0"])
             i = i + 1
 
-nw_data.to_csv("concilors.csv", columns=["Id", "Name"], sep=";", index=False)
+nw_data.to_csv("councillors.csv", columns=["Id", "Name"], sep=";", index=False)
 
 with open("connections.csv", "w", newline='') as csvfile:
         wr = writer(csvfile)
