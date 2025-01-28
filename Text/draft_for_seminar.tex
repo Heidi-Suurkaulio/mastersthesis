@@ -9,6 +9,43 @@
 
 \begin{document}
 \begin{onehalfspace}
+\subsection{Sources}
+Since this work is conducted with pre-collected dataset, this work can be categorised as secondary analysis. Secondary analysis meaning re-analysing the data with new research questions or approaches, while primary analysis involves the collection of the data. Secondary analysis can also be discerned from meta analysis, which means comparing multiple previous studies (usally with quantitative methods) to create a synthesis on a certain question.\footcite[p. 4-5.]{meta-analysis} 
+
+On the contrary in their articles Kimmo Elo and Olli Kleemola or Elo and Tiina Lintunen apply a network analysis on their own primary datasets.\footcites{eloAklee15}{LintunenAndElo2019} However, in the case of this work the benefit of doing secondary analysis is that the focus can be on the implementation and assessment of the method. Furthermore, the existing dataset will be automatically and manually re-examined for possible errors in the process, as will be discussed soon. 
+
+As mentioned earlier, this work is based on the \textit{Swedish councillors of the Realm, 1523-1680} -dataset authored by Marko Hakanen and Ulla Koskinen. The dataset was published in 2017 and can be found in Digital repository of University of Jyväskylä under the license CC BY 4.0. The dataset was collected as a part of the research conducted for the anthology \textit{Personal Agency at the Swedish Age of Greatness 1560–1720}.
+
+The dataset consists of information from 257 Swedish councillors of the realm. Each councillor has the following feature attributes: date of birth, year of death, year, date and age of appointment, noble rank, spouse(s) along with father's spouse and the individual's family links between other councillors. The councillors are identified with their full name and id number.\footcites[p. 48.]{HakanenAKoskinen2017}{councillorsDS}
+
+\begin{table}[h]
+	\centering
+	\caption{Example rows of the dataset: Gyllenhorn, Joen Olsson and Natt och Dag, Måns Johansson (\cite{councillorsDS})} 
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c | c | c | c | c | c | c | c | c | c|}
+			\hline
+			Name & No. & D.O.B. & † & Appointed & Date & Age & Noble rank & Family members in the council & Spouse(s) / Father of Spouse / Date of Marriage \\ 
+			\hline
+			Gyllenhorn, Joen Olsson & 82 & & 1556 & 1529 & 00.6. & & Uradel (Ancient Nobility) & Son-in-law 44 & Karin Bese/Nils Nilsson Bese/1529 \\
+			\hline
+			Natt och Dag, Måns Johansson & 142 & 1498 & 1555 & 1529 & 00.6. & 31 & Uradel (Ancient Nobility) & & Barbro Eriksdotter/Erik Turesson Bielke/ probably 27.6.1524 \\
+			\hline
+		\end{tabular}%
+	}
+\end{table}
+
+Hakanen and Koskinen have compiled the data from secondary sources such as biographical registers and databases, biography collections, lineage databases and research literature. The dataset's sources are listed in the dataset and in the article written by Hakanen and Koskinen, those include for instance Nordic Family Book (Nordisk familjebok), National Biography of Finland (Finland's nationalbiografi, Kansallisbiografia), genealogies of old Swedish aristocratic families (Äldre svenska frälsesläkter) and further refereed literature.\footcites[p. 48, 76]{HakanenAKoskinen2017}{councillorsDS} As reported by Hakanen and Koskinen the dataset is collected using methodologies of collective biography, new prosopography and source criticism.\footcite[p. 48.]{HakanenAKoskinen2017}
+
+Even though the dataset can be assessed as reliable and generally accurate, there is the general problem of some missing data. As seen in the example of Table 1, some of the councillors have missing attributes such as date of birth and therefore age of appointment. The missing attributes are most likely due the fact that during the timespan of the dataset there was no standard of civil registration. 
+
+The order of keeping parish registers (kyrkbok) was given in the Swedish Church Law 1686 (Kyrkio-Lag och Ordning), six years from the endpoint of the dataset. The Church Law made it mandatory for parish vicars to keep certain records and documents concerning the population and economy of the parish. Among other things these parish registers included the records of marriages, births, christens, deaths and funerals. Despite that the Swedish parish registers have been assessed exceptionally comprehensive by historians, there are some considerable deficiencies due to the differing circumstances and practices between parishes, furthermore some of the registers have been destroyed or lost. Even though some records do exist prior and post (TODO format) the Swedish Church Law 1686, they are notably dispersed.\footcite[p. 169-176.]{viikki94} A case in point: according to the Dictionary of Swedish National Biography (Svenskt biografiskt lexikon) the birth year of king Gustav Vasa (1495 or 1496) is also an estimate.\footcite{sbl_gustav_v} 
+
+However, the focus of this work is not on the ages of the councillors but in their affiliations, so, the more relevant question is whether or not there are missing family links. 
+
+(TODO write script and do some checking)
+
+As the relatively large dataset is compiled by humans, it leaves some room for typos and errors. While producing the first experimental graph of the dataset, some empty data points were found. These "ghosts" were nodes with only id number and one or two links to the other councillors. All in all there were four "ghosts" with the id numbers 147 (linked to 18 and 152), 215 (linked to 217), 249 (linked to 269) and 254 (linked to 94). With the help of Marko Hakanen it was resolved that those "ghost" nodes were data points removed from the dataset as the authors found out they have not been official councillors, however, some references to their id numbers had been left to the dataset by accident. The "ghost" nodes will be removed from the latter graphs.
+
 \section{Method}
 %TODO computer aided network analysis <- distinction between 'verkostotutkimus' mentioned in Juuso Marttila's thesis. 
 My method is computer aided (social) network analysis. It is one of the most implemented methods in the field of digital humanities. Generally network analysis has other more everyday applications, such as, the analysis of the internet as a network in the field of technology. Quite a few textbooks have been written on network analysis.
