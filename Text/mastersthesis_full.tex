@@ -1,0 +1,26 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage[most]{tcolorbox} %for the abstract-page
+\usepackage{graphicx} %for table
+\usepackage{hyperref} %for links
+
+\usepackage[backend=bibtex, style=chicago-authordate]{biblatex}
+
+\graphicspath{ {/home/heidi/Gradu2_0/Images/} }
+\addbibresource{mastersthesis.bib}
+
+\usepackage[utf8]{inputenc} %whenever Islandic names
+\usepackage[T1]{fontenc}
+
+\begin{document}
+	\begin{onehalfspace}
+		\input{abstract.tex}
+		\newpage
+		\input{introduction.tex}
+		\input{method.tex}
+		\input{conclusion.tex}
+	\end{onehalfspace}
+\printbibliography %TODO group by source type
+\end{document}

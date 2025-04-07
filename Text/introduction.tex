@@ -1,16 +1,15 @@
-\documentclass[a4paper,12pt]{article}
-\usepackage[english]{babel}
-\usepackage[margin=1in]{geometry}
-\usepackage{setspace}
-\usepackage{graphicx} %for table
-\usepackage[backend=bibtex, style=chicago-authordate]{biblatex}
-\addbibresource{mastersthesis.bib}
+%\documentclass[a4paper,12pt]{article}
+%\usepackage[english]{babel}
+%\usepackage[margin=1in]{geometry}
+%\usepackage{setspace}
+%\usepackage{graphicx} %for table
+%\usepackage[backend=bibtex, style=chicago-authordate]{biblatex}
+%\addbibresource{mastersthesis.bib}
 %whenever Islandic names
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
 
-\begin{document}
-\begin{onehalfspace} %TODO move to the main tex component!
+%\begin{onehalfspace} %TODO move to the main tex component!
 \section{Introduction}
 The aim of my master's thesis is to (re)construct and study a network of the family ties inside the Swedish Council of the Realm (Riksrådet) from the early 16th century to the late 17th century. The study will be conducted by creating a data structure and a visual representation of a graph depicting the family links. The work will be focused on roughly two main sectors: first of which is the actual analysis of the family links between the councillors, the second one is the assessment of the method of historical network analysis. 
 
@@ -101,7 +100,4 @@ However, the focus of this work is not on the ages of the councillors but in the
 
 As the relatively large dataset is compiled by humans, it leaves some room for typos and errors. While producing the first experimental graph of the dataset, some empty data points were found. These "ghosts" were nodes with only id number and one or two links to the other councillors. All in all there were four "ghosts" with the id numbers 147 (linked to 18 and 152), 215 (linked to 217), 249 (linked to 269) and 254 (linked to 94). With the help of Marko Hakanen it was resolved that those "ghost" nodes were data points removed from the dataset as the authors found out they have not been official councillors, however, some references to their id numbers had been left to the dataset by accident. The "ghost" nodes will be removed from the latter graphs.
 
-\printbibliography
-%excluding women and lower classes
-\end{onehalfspace}
-\end{document}
+% TODO excluding women and lower classes

@@ -8,9 +8,31 @@
 \addbibresource{mastersthesis.bib}
 
 \begin{document}
+Structure of the work
+	\begin{enumerate}
+		\item Introduction \begin{itemize}
+			\item Research questions
+			\item Council of the Realm
+			\item Sources \end{itemize}
+		\item Method \begin{itemize}
+			\item Defining the network
+			\item Implementation of the network analysis
+			\item Test run \end{itemize}
+		\item Analysis
+		\item Conclusion
+	\end{enumerate}
+
+Huomioita ja kysymyksiä 
+\begin{itemize}
+	\item Otsikko 0.1 on tekninen asia, korjaantuu itsestään
+	\item Kappale Sources ja Test run ovat valmiimpaa tekstiä, välissä luonnosta
+	\item Ovatko kuvaajat ja taulukot hyödyllisiä?
+	\item Onko passiivi vai aktiivimuoto miellyttävämpää lukea?
+	\item Ymmärtääkö tekstistä mitä teen ja miksi? 
+\end{itemize}
 \begin{onehalfspace}
 \subsection{Sources}
-Since this work is conducted with pre-collected dataset, this work can be categorised as secondary analysis. Secondary analysis meaning re-analysing the data with new research questions or approaches, while primary analysis involves the collection of the data. Secondary analysis can also be discerned from meta analysis, which means comparing multiple previous studies (usally with quantitative methods) to create a synthesis on a certain question.\footcite[p. 4-5.]{meta-analysis} 
+Since this work is conducted with pre-collected dataset, this work can be categorized as secondary analysis. Secondary analysis meaning re-analyzing the data with new research questions or approaches, while primary analysis involves the collection of the data. Secondary analysis can also be discerned from meta analysis, which means comparing multiple previous studies (usually with quantitative methods) to create a synthesis on a certain question.\footcite[p. 4-5.]{meta-analysis} 
 
 On the contrary in their articles Kimmo Elo and Olli Kleemola or Elo and Tiina Lintunen apply a network analysis on their own primary datasets.\footcites{eloAklee15}{LintunenAndElo2019} However, in the case of this work the benefit of doing secondary analysis is that the focus can be on the implementation and assessment of the method. Furthermore, the existing dataset will be automatically and manually re-examined for possible errors in the process, as will be discussed soon. 
 
@@ -36,9 +58,9 @@ The dataset consists of information from 257 Swedish councillors of the realm. E
 
 Hakanen and Koskinen have compiled the data from secondary sources such as biographical registers and databases, biography collections, lineage databases and research literature. The dataset's sources are listed in the dataset and in the article written by Hakanen and Koskinen, those include for instance Nordic Family Book (Nordisk familjebok), National Biography of Finland (Finland's nationalbiografi, Kansallisbiografia), genealogies of old Swedish aristocratic families (Äldre svenska frälsesläkter) and further refereed literature.\footcites[p. 48, 76]{HakanenAKoskinen2017}{councillorsDS} As reported by Hakanen and Koskinen the dataset is collected using methodologies of collective biography, new prosopography and source criticism.\footcite[p. 48.]{HakanenAKoskinen2017}
 
-Even though the dataset can be assessed as reliable and generally accurate, there is the general problem of some missing data. As seen in the example of Table 1, some of the councillors have missing attributes such as date of birth and therefore age of appointment. The missing attributes are most likely due the fact that during the timespan of the dataset there was no standard of civil registration. 
+Even though the dataset can be assessed as reliable and generally accurate, there is the general problem of some missing data. As seen in the example of Table 1, some of the councillors have missing attributes such as date of birth and therefore age of appointment. The missing attributes are most likely due the fact that during the time span of the dataset there was no standard of civil registration. 
 
-The order of keeping parish registers (kyrkbok) was given in the Swedish Church Law 1686 (Kyrkio-Lag och Ordning), six years from the endpoint of the dataset. The Church Law made it mandatory for parish vicars to keep certain records and documents concerning the population and economy of the parish. Among other things these parish registers included the records of marriages, births, christens, deaths and funerals. Despite that the Swedish parish registers have been assessed exceptionally comprehensive by historians, there are some considerable deficiencies due to the differing circumstances and practices between parishes, furthermore some of the registers have been destroyed or lost. Even though some records do exist prior and post (TODO format) the Swedish Church Law 1686, they are notably dispersed.\footcite[p. 169-176.]{viikki94} A case in point: according to the Dictionary of Swedish National Biography (Svenskt biografiskt lexikon) the birth year of king Gustav Vasa (1495 or 1496) is also an estimate.\footcite{sbl_gustav_v} 
+The order of keeping parish registers (kyrkbok) was given in the Swedish Church Law 1686 (Kyrkio-Lag och Ordning), six years from the endpoint of the dataset. The Church Law made it mandatory for parish vicars to keep certain records and documents concerning the population and economy of the parish. Among other things these parish registers included the records of marriages, births, christens, deaths and funerals. Despite that the Swedish parish registers have been assessed exceptionally comprehensive by historians, there are some considerable deficiencies due to the differing circumstances and practices between parishes, furthermore some of the registers have been destroyed or lost. Even though some records do exist prior and post the Swedish Church Law 1686, they are notably dispersed.\footcite[p. 169-176.]{viikki94} A case in point: according to the Dictionary of Swedish National Biography (Svenskt biografiskt lexikon) the birth year of king Gustav Vasa (1495 or 1496) is also an estimate.\footcite{sbl_gustav_v} 
 
 However, the focus of this work is not on the ages of the councillors but in their affiliations, so, the more relevant question is whether or not there are missing family links. 
 
@@ -53,7 +75,7 @@ My method is computer aided (social) network analysis. It is one of the most imp
 %Furthermore, in the field of technology network analysis does have some everyday application, such as the analysis of the internet. 
 
 \subsection{Defining the network}
-Network analysis combines mathematics, statistics and social scineces. Primarily it is based on the mathematical graph theory. A graph is a representation of the network. Graph includes nodes (also colled vertice) and edges (also called links and connections).
+Network analysis combines mathematics, statistics and social sciences Primarily it is based on the mathematical graph theory. A graph is a representation of the network. Graph includes nodes (also called vertices) and edges (also called links and connections).
 
 \begin{figure}[h]
 	\includegraphics[scale=0.25]{example_network.drawio.png}
@@ -65,7 +87,7 @@ In this context the graph's nodes depict individual councillors with the input o
 
 Calculating different statistics is a crucial part of the network analysis. One of the most important measures is the \textbf{node degree}. In all its simplicity node degree means the amount of edges connected to a specific node. For example, the degree of Johan Bengtsson (Schroderus) Skytte (id 184) is three or the degree of Bengt Johansson Skytte (id 183) is one. The \textbf{average degree} is the mean [keskiarvo] of all the node degrees of the specific graph. The \textbf{density} of the network is based on the node degrees. In very dense network almost every node is connected to each other, but a sparse graph has just a few edges in it.
 
-Another important factor is whether the graph is \textbf{directed} or \textbf{undirected}. In directed graph the edges have directions, like in the communication networks a message has a sender and a receiver. The directions are marked with an arrow. In undirected graphs the edges are bidirectional (two way), for example, a relationship between two brothers can be understood as undirected. Directed graphs have more features and a more complex structures, for instance, the degrees of inbound and outbound edges can be counted separately. For sipmlicity, the graphs presented in this work are undirected.
+Another important factor is whether the graph is \textbf{directed} or \textbf{undirected}. In directed graph the edges have directions, like in the communication networks a message has a sender and a receiver. The directions are marked with an arrow. In undirected graphs the edges are bidirectional (two way), for example, a relationship between two brothers can be understood as undirected. Directed graphs have more features and a more complex structures, for instance, the degrees of inbound and outbound edges can be counted separately. For simplicity, the graphs presented in this work are undirected.
 
 \subsection{Implementation of the network analysis}
 The data processing and analysis is conducted with a combination of Python programming language and Gephi software. Python is used for extracting the data from the councillors-dataset and formulating it in the right format: readable for Gephi. The actual network analysis, visualization and calculating statistics, is performed with Gephi. 
@@ -113,7 +135,7 @@ The data processing was started by manually cleaning the data in LibreOffice Cal
 	}
 \end{table}
 
-The script itself reads the data from the .csv file. The connections between the councillors are separated from the "Family" column, based on the knowledge that each connection is marked with the id number of another councillor. The connections are then formatted and printed to .csv file. The connections .csv file containing values for "Source" id of the source concillor, "Target" id of target councillor, "Type" standard "Undirected", "Id" id number for the connection, "Weight" standard 1.0. Another .csv file is formatted and printed with the information of councillors' names and id numbers.
+The script itself reads the data from the .csv file. The connections between the councillors are separated from the "Family" column, based on the knowledge that each connection is marked with the id number of another councillor. The connections are then formatted and printed to .csv file. The connections .csv file containing values for "Source" id of the source concillor, "Target" id of target councillor, "Type" standard "Undirected", "Id" id number for the connection and "Weight" standard 1.0. Another .csv file is formatted and printed with the information of councillors' names and id numbers.
 
 \begin{table}[h]
 	\caption{Example of the connections .csv file}
@@ -142,11 +164,11 @@ The script itself reads the data from the .csv file. The connections between the
 	\end{tabular}
 \end{table}
 
-These .csv files are readable for Gephi. The outcome was an undirected graph of the councillors' affiliation network that had accumulated during the 160 years. The graph consisted of 261 nodes (257 real + 4 "ghosts") and 372 edges (including self loops and "ghost" nodes). The test run revealed three problems within the graph: the emergence of the empty "ghost" nodes, parallel edges and thirdly self loops. 
+These .csv files are readable for Gephi. The outcome was an undirected graph of the councillors' affiliation network that had accumulated during the 160 years. The graph consisted of 261 nodes (257 real + 4 "ghosts") and 372 edges (including self loops and "ghost" nodes). The test run revealed three problems within the graph: the emergence of the empty "ghost" nodes, parallel edges and self loops. 
 
-The "ghost" nodes were excess nodes with no name and only an id number and one or two connections in the graph. They were due to the references to the data points removed from the original dataset, and therefore can be ignored. The ghosts are discussed further in the subsection sources. However, the more essential problem were parallel edges and self loops.
+The "ghost" nodes were excess nodes with no name and only an id number and one or two connections in the graph. They were due to the references to the data points removed from the original dataset, and therefore can be ignored. The ghosts are discussed further in the subsection Sources. However, the more essential problem were parallel edges and self loops.
 
-The parallel edges occur because one relationship, such as father and son, is sometimes marked parallel in the dataset. For example, in the case of Göran Göransson Gyllenstierna (id 87) the relatives are "Maternal Grandfather 184, Brother 90, Father-in-law 3, ...", and the same relationship is found in his grandfather's Johan Bengtsson (Schroderus) Skytte's (id 184) links: "Son 183, Grandson through daughter 87". Yet, the connection to Göran Göransson's brother Johan Göransson Gyllenstierna (id 90) is not marked in the grandfathers links. This means that the node of Göran Göransson Gyllenstierna (id 87) has one excess link compared to his brother's node. The case is visualized in the Figure 2.
+The parallel edges occur because one relationship, such as father and son, is sometimes marked doubly in the dataset. For example, in the case of Göran Göransson Gyllenstierna (id 87) the relatives are "Maternal Grandfather 184, Brother 90, Father-in-law 3, ...", and the same relationship is found in his grandfather's Johan Bengtsson (Schroderus) Skytte's (id 184) links: "Son 183, Grandson through daughter 87". Yet, the connection to Göran Göransson's brother Johan Göransson Gyllenstierna (id 90) is not marked in the grandfathers links. This means that the node of Göran Göransson Gyllenstierna (id 87) has one excess link compared to his brother's node. The case is visualized in the Figure 2.
 
 \begin{figure}[h]
 	\includegraphics[scale=0.20]{double_link.drawio.png}
@@ -157,9 +179,9 @@ The parallel edges occur because one relationship, such as father and son, is so
 
 These duplicate edges would cause bias to the calculation of the node degrees and any statistics based on them. A node degree is a sum of all the edges connected to one node, and if the relationships are inconsistently marked with one or two edges, the factually similar nodes would get different degrees. These inconsistent node degrees would accumulate when counting the average degrees an so forth. The problem of parallel edges is widely recognized in the field of network analysis, and therefore Gephi does have some builtin features for handling it.
 
-While importing data to Gephi (on Import Spreadsheet) the strategy for merging the parallel edges can be chosen. One option is, for example, placing the sum or average of the parallel edges in the edge's degree, yet using only one connection to to represent the edge in the graph. In this context a more simple solution was chosen, with the option "Firs" Gephi will use only the first connection between two nodes ignoring any latter ones. This will reduce the amount of connections from 698 found in the connections.csv to only 372.
+While importing data to Gephi (on Import Spreadsheet) the strategy for merging the parallel edges can be chosen. One option is, for example, placing the sum or average of the parallel edges in the edge's degree, yet using only one connection to to represent the edge in the graph. In this context a more simple solution was chosen, with the option "First" Gephi will use only the first connection between two nodes ignoring any latter ones. This will reduce the amount of edges from 698 found in the connections.csv to only 372.
 
-Self loops occur when one node has – for some reason or another – a connection to itself. Similarly to the parallel edges, they cause bias to the node degrees. In this graph a self loop can be found at least on the node with id 5 and id 90. In the case of id 5: Gustaf Axelsson Baner, his relatives are "Father 4, Father-in-law 217, Brother 9, Sons 5, 7, 8, 10, Sons-in-law 152 and 197", and similarly with id 90: Johan Göransson Gyllenstierna his family reads "Maternal Grandfather 184, Brother 90". These self loops are most likely caused by a typo in the dataset, because it is reasonable to assume that none is a son or brother to themselves.
+Self loops occur when one node has–for some reason or another–a connection to itself. Similarly to the parallel edges, they cause bias to the node degrees. In this graph a self loop can be found at least on the node with id 5 and id 90. In the case of id 5: Gustaf Axelsson Baner, his relatives are "Father 4, Father-in-law 217, Brother 9, Sons 5, 7, 8, 10, Sons-in-law 152 and 197", and similarly with id 90: Johan Göransson Gyllenstierna his family reads "Maternal Grandfather 184, Brother 90". These self loops are most likely caused by a typo in the dataset, because it is reasonable to assume that none is a son or brother to themselves.
  
 Gephi does have a switch whether or not self loops are allowed in the graph, and it can automatically remove them based on the preference. The self loops are present in the test run graph alongside with the ghost nodes, yet those will be removed from the subsequent analysis. To highlight the ghosts they are colored cray, and the four nodes referred as an example here are colored red in the test run graph.
 
