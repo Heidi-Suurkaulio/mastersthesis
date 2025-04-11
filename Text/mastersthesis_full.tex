@@ -2,8 +2,10 @@
 \usepackage[english]{babel}
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
+\usepackage{xr} %cross references
 \usepackage[most]{tcolorbox} %for the abstract-page
-\usepackage{graphicx} %for table
+\usepackage{graphicx} %for resizing table
+\usepackage{rotating} %for rotating table
 \usepackage{hyperref} %for links
 
 \usepackage[backend=bibtex, style=chicago-authordate]{biblatex}
@@ -19,6 +21,7 @@
 		\input{abstract.tex}
 		\newpage
 		\input{introduction.tex}
+		\newpage
 		\input{method.tex}
 		\input{conclusion.tex}
 	\end{onehalfspace}

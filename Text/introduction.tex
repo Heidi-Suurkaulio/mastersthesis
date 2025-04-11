@@ -43,7 +43,7 @@ The basis and context of this study will lay on the pre-existing literature conc
 \subsection{Previous research}
 Historical network analysis can be understood as, to a certain degree established, but developing method. According to Finnish political historians Kimmo Elo and Olli Kleemola, the roots of historical network analysis are as far as in the late 19th century, yet, the modern appliance of the method is due the invention of computers, increase in the computing capacity and availability of user friendly network analysis software. They estimate that historical network analysis has gained its popularity from somewhere in the late 2000's.\footcite[p. 415-417.]{eloAklee15} 
 
-It appears that Elo and Kleemola approach historical network analysis as a predominantly digital or computational research method.\footcite[p. 415-417.]{eloAklee15} However, the definition is not that straightforward. Social network analysis, which is the basis for historical network analysis, involves theorising, model building and empirical research focusing on the patterns formed inside the networks.\footcite[p. 22-24.]{Keats-R2007} (Social) network analysis has been employed in the field of history before the turn of the millenia, previous to the era of intuitive software.\footcite[TODO check!]{AronssonEtA1999} So, the field of historical network analysis can be roughly divided in two approaches: one with more descriptive or theorising stance and the another that treats network analysis as a quantitative computer-aided method. In the context of this work, (historical) network analysis will be treated primarily as a computer-aided method, similarily to the article of Elo and Kleemola, therefore focusing mainly on the previous research with computational approach. The further theory and practice will be covered in the section 2.
+It appears that Elo and Kleemola approach historical network analysis as a predominantly digital or computational research method.\footcite[p. 415-417.]{eloAklee15} However, the definition is not that straightforward. Social network analysis, which is the basis for historical network analysis, involves theorising, model building and empirical research focusing on the patterns formed inside the networks.\footcite[p. 22-24.]{Keats-R2007} (Social) network analysis has been employed in the field of history before the turn of the millenia, previous to the era of intuitive software.\footcite[TODO check!]{AronssonEtA1999} So, the field of historical network analysis can be roughly divided in two approaches: one with more descriptive or theorising stance and the another that treats network analysis as a quantitative computer-aided method. In the context of this work, (historical) network analysis will be treated primarily as a computer-aided method, similarily to the article of Elo and Kleemola, therefore focusing mainly on the previous research with computational approach. The further theory and practice will be covered in the section \ref{method}.
 
 The international \textit{Historical Network Research Community} (HNR) was found in 2009. The community has grown over time, and nowadays HNR runs workshops, conferences, lectures and a Slack (chat) group, and publishes an open access journal, a newsletter and a research bibliography.\footcite{hnr} On the word of Kimmo Elo, historical network analysis has been the most popular computational method amongst historians.\footcite[p. 22.]{elo16} 
 
@@ -72,25 +72,11 @@ As mentioned earlier, this work is based on the \textit{Swedish councillors of t
 
 The dataset consists of information from 257 Swedish councillors of the realm. Each councillor has the following feature attributes: date of birth, year of death, year, date and age of appointment, noble rank, spouse(s) along with father's spouse and the individual's family links between other councillors. The councillors are identified with their full name and id number.\footcites[p. 48.]{HakanenAKoskinen2017}{councillorsDS}
 
-\begin{table}[h]
-	\centering
-	\caption{Example rows of the dataset: Gyllenhorn, Joen Olsson and Natt och Dag, Måns Johansson (\cite{councillorsDS})} 
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{|c | c | c | c | c | c | c | c | c | c|}
-			\hline
-			Name & No. & D.O.B. & † & Appointed & Date & Age & Noble rank & Family members in the council & Spouse(s) / Father of Spouse / Date of Marriage \\ 
-			\hline
-			Gyllenhorn, Joen Olsson & 82 & & 1556 & 1529 & 00.6. & & Uradel (Ancient Nobility) & Son-in-law 44 & Karin Bese/Nils Nilsson Bese/1529 \\
-			\hline
-			Natt och Dag, Måns Johansson & 142 & 1498 & 1555 & 1529 & 00.6. & 31 & Uradel (Ancient Nobility) & & Barbro Eriksdotter/Erik Turesson Bielke/ probably 27.6.1524 \\
-			\hline
-	\end{tabular}%
-}
-\end{table}
+%table was here
  
 Hakanen and Koskinen have compiled the data from secondary sources such as biographical registers and databases, biography collections, lineage databases and research literature. The dataset's sources are listed in the dataset and in the article written by Hakanen and Koskinen, those include for instance Nordic Family Book (Nordisk familjebok), National Biography of Finland (Finland's nationalbiografi, Kansallisbiografia), genealogies of old Swedish aristocratic families (Äldre svenska frälsesläkter) and further refereed literature.\footcites[p. 48, 76]{HakanenAKoskinen2017}{councillorsDS} As reported by Hakanen and Koskinen the dataset is collected using methodologies of collective biography, new prosopography and source criticism.\footcite[p. 48.]{HakanenAKoskinen2017}
   
-Even though the dataset can be assessed as reliable and generally accurate, there is the general problem of some missing data. As seen in the example of Table 1, some of the councillors have missing attributes such as date of birth and therefore age of appointment. The missing attributes are most likely due the fact that during the timespan of the dataset there was no standard of civil registration. 
+Even though the dataset can be assessed as reliable and generally accurate, there is the general problem of some missing data. As seen in the example of Table \ref{tab1}, some of the councillors have missing attributes such as date of birth and therefore age of appointment. The missing attributes are most likely due the fact that during the timespan of the dataset there was no standard of civil registration. 
 
 The order of keeping parish registers (kyrkbok) was given in the Swedish Church Law 1686 (Kyrkio-Lag och Ordning), six years from the endpoint of the dataset. The Church Law made it mandatory for parish vicars to keep certain records and documents concerning the population and economy of the parish. Among other things these parish registers included the records of marriages, births, christens, deaths and funerals. Despite that the Swedish parish registers have been assessed exceptionally comprehensive by historians, there are some considerable deficiencies due to the differing circumstances and practices between parishes, furthermore some of the registers have been destroyed or lost. Even though some records do exist prior and post (TODO format) the Swedish Church Law 1686, they are notably dispersed.\footcite[p. 169-176.]{viikki94} A case in point: according to the Dictionary of Swedish National Biography (Svenskt biografiskt lexikon) the birth year of king Gustav Vasa (1495 or 1496) is also an estimate.\footcite{sbl_gustav_v} 
 
@@ -101,3 +87,31 @@ However, the focus of this work is not on the ages of the councillors but in the
 As the relatively large dataset is compiled by humans, it leaves some room for typos and errors. While producing the first experimental graph of the dataset, some empty data points were found. These "ghosts" were nodes with only id number and one or two links to the other councillors. All in all there were four "ghosts" with the id numbers 147 (linked to 18 and 152), 215 (linked to 217), 249 (linked to 269) and 254 (linked to 94). With the help of Marko Hakanen it was resolved that those "ghost" nodes were data points removed from the dataset as the authors found out they have not been official councillors, however, some references to their id numbers had been left to the dataset by accident. The "ghost" nodes will be removed from the latter graphs.
 
 % TODO excluding women and lower classes
+
+\begin{sidewaystable}
+	\caption{Example rows of the dataset: Gyllenhorn, Joen Olsson and Natt och Dag, Måns Johansson (\cite{councillorsDS})}\label{tab1}
+\resizebox{\textwidth}{!}{%
+	\begin{tabular}{|c | c | c | c | c | c | c | c | c | c|}
+		\hline
+		Name & No. & D.O.B. & † & Appointed & Date & Age & Noble rank & Family members in the council & Spouse(s) / Father of Spouse / Date of Marriage \\ 
+		\hline
+		Gyllenhorn, Joen Olsson & 82 & & 1556 & 1529 & 00.6. & & Uradel (Ancient Nobility) & Son-in-law 44 & Karin Bese/Nils Nilsson Bese/1529 \\
+		\hline
+		Natt och Dag, Måns Johansson & 142 & 1498 & 1555 & 1529 & 00.6. & 31 & Uradel (Ancient Nobility) & & Barbro Eriksdotter/Erik Turesson Bielke/ probably 27.6.1524 \\
+		\hline
+	\end{tabular}%
+}
+\bigskip
+	\caption{Example of the raw .csv file}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|cccccccccp{1.5in}p{1.5in}|}
+			\hline
+			1 &Name; &Id; &D.O.B.; &died; &Appointed; &Date; &Age; &Noble rank; &Family; &Spouse(s) / Father of Spouse / Date of Marriage \\
+			\hline
+			2 &Ingemar Petri; &162; &; &1530; &1495; &; &; &Estate unknown, Bishop; &; &; \\
+			\hline
+			3 &Tre Rosor, Ture Jönsson; &231; &; &1532; &1497; &; &; &Uradel (Ancient Nobility); &Father CR, Father-in-law CR, Sons 228, 230, Son (illegitimate) 175; &Anna Johansdotter/ Johan Christiernsson Vasa (CR) \\
+			\hline
+		\end{tabular}%
+	}
+\end{sidewaystable}

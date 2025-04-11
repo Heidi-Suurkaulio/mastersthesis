@@ -8,6 +8,7 @@
 %\addbibresource{mastersthesis.bib}
 
 \section{Method}
+\label{method}
 %TODO computer aided network analysis <- distinction between 'verkostotutkimus' mentioned in Juuso Marttila's thesis. 
 My method is computer aided (social) network analysis. It is one of the most implemented methods in the field of digital humanities. Generally network analysis has other more everyday applications, such as, the analysis of the internet as a network in the field of technology. Quite a few textbooks have been written on network analysis.
 
@@ -59,20 +60,7 @@ To draft the structure of the graph and understand the nuances of the given data
 
 The data processing was started by manually cleaning the data in LibreOffice Calc (equivalent to Microsoft Excel). The columns and rows containing information of the source material of the dataset and councillor's years active were removed. That made the structure of the data coherent and easier to manipulate with the Python script. The manually cleaned data is exported as .csv (comma separated values) file. The .csv file's header (the first line of the file) should be modified so that the column name "No." is changed to "Id" and "Family members in the council of the realm" is changed to "Family", the first one can cause an error if referenced in the Python code, the latter is inconveniently long. 
 
-\begin{table}[h]
-	\caption{Example of the raw .csv file}
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{cccccccccp{1.5in}p{1.5in}}
-			\hline
-			1 &Name; &Id; &D.O.B.; &died; &Appointed; &Date; &Age; &Noble rank; &Family; &Spouse(s) / Father of Spouse / Date of Marriage \\
-			\hline
-			2 &Ingemar Petri; &162; &; &1530; &1495; &; &; &Estate unknown, Bishop; &; &; \\
-			\hline
-			3 &Tre Rosor, Ture Jönsson; &231; &; &1532; &1497; &; &; &Uradel (Ancient Nobility); &Father CR, Father-in-law CR, Sons 228, 230, Son (illegitimate) 175; &Anna Johansdotter/ Johan Christiernsson Vasa (CR) \\
-			\hline
-		\end{tabular}%
-	}
-\end{table}
+%table 2
 
 The script itself reads the data from the .csv file. The connections between the councillors are separated from the "Family" column, based on the knowledge that each connection is marked with the id number of another councillor. The connections are then formatted and printed to .csv file. The connections .csv file containing values for "Source" id of the source concillor, "Target" id of target councillor, "Type" standard "Undirected", "Id" id number for the connection, "Weight" standard 1.0. Another .csv file is formatted and printed with the information of councillors' names and id numbers.
 
