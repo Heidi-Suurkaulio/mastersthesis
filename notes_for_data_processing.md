@@ -9,3 +9,5 @@
 - Found some 'ghost' nodes e.g. Id: 147, why?
 
 - Where is "Lillienstedt, Johan (1655-1732) is he one of the "ghosts"
+
+- 'timestamps' could be counted from year of appointment and year of death. The position was (usually) lifelong (Hakanen and Koskinen p. 52)
