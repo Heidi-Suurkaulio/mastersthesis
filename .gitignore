@@ -6,3 +6,4 @@
 *.run.xml
 *.synctex.gz
 *.out
+*.Rhistory
