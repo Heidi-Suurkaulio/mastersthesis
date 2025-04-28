@@ -16,6 +16,12 @@
 \usepackage[utf8]{inputenc} %whenever Islandic names
 \usepackage[T1]{fontenc}
 
+\defbibfilter{literature}{
+	type=article or
+	type=book or
+	type=inbook
+}
+
 \title{Game of networks: family links within the Swedish council of the Realm (1520-1680)}
 \begin{document}
 	\input{abstract.tex}
@@ -29,6 +35,6 @@
 		\input{conclusion.tex}
 	\end{onehalfspace}
 \printbibliography[type=misc,title={Primary sources}]
-\printbibliography[nottype=misc,nottype=online,title={Literature}]
+\printbibliography[filter=literature,title={Literature}]
 \printbibliography[type=online,title={Online}]
 \end{document}

@@ -21,17 +21,21 @@ Calculating different statistics is a crucial part of the network analysis. One 
 Another important factor is whether the graph is \textbf{directed} or \textbf{undirected}. In directed graph the edges have directions, like in the communication networks a message has a sender and a receiver. The directions are marked with an arrow. In undirected graphs the edges are bidirectional (two way), for example, a relationship between two brothers can be understood as undirected. Directed graphs have more features and a more complex structures, for instance, the degrees of inbound and outbound edges can be counted separately. For sipmlicity, the graphs presented in this work are undirected.
 
 \subsection{Implementation of the network analysis}
-The data processing and analysis is conducted with a combination of Python programming language and Gephi software. Python is used for extracting the data from the councillors-dataset and formulating it in the right format: readable for Gephi. The actual network analysis, visualization and calculating statistics, is performed with Gephi. 
+I use the combination of Python programming language and Gephi software in the data processing and analysis. Python is used for extracting the data from the councillors-dataset and formulating it in the right format: readable for Gephi. Whereas the actual network analysis: visualization and calculating statistics, is performed with Gephi. 
 
-Python is a programming language popular amongst scientists. I selected Python due its simple syntax and ease in implementing small tasks like data processing. The language is understandable and widely used, which makes the work replicable. To be precise the script is written with Python 3.
+Python is a high level\footnote{Meaning code intended to be read and undersood by humans if compared for example with binary code written only with 0s and 1s.} programming language. Python can be used in variety of tasks including data processing, machine learning (AI models) or web development. Python is intended to be of object oriented programming style, however, it is not determined to be used only on that paradigm.\footcite[p. 1.]{pythonbook} For instance, my personal programming style is more in the imperative style. 
 
-As graphs are structures commonly used in programming, it would have been possible to conduct the actual network analysis using tools provided by Python, yet, Gephi software provides a visual user interface and more intuitive tools for the manipulation of the graph. Furthermore, the Gephi format makes the data and graph accessible also for non programmers.
+I selected Python due its simple syntax and ease in implementing relatively small tasks in data processing. The language is understandable and widely used amongst scientists, which makes the work replicable. To be precise the scripts are written with Python 3, exact version being Python 3.11.7.
+
+As graphs are structures commonly used in programming, it would have been possible to conduct the actual network analysis using tools provided by Python, yet, Gephi software provides a graphical user interface (GUI) and more intuitive tools for the manipulation of the graph. Furthermore, the Gephi format makes the data and graph accessible also for non programmers.
 
 Gephi is a software for network visualization and analysis. It contains tools for manipulating, filtering, clustering and visualizing the graph. It has built in appliances for fixing errors in data and calculating necessary statistics.\footcite{gephi} Gephi reads data from text format (comma separated values .csv) or Microsoft Excel tables (XLSX), and Gephi projects are saved as .gephi files. The processed graphs and data can be exported as images or tables.  
 
 Nonetheless, Gephi does have some weaknesses. It is not always the most intuitive to use, and especially the visual configurations of the graph causes some issues. I have encountered difficulties with the node labels (the councilor's name next to the node). Sometimes the problems lies in the Gephi settings, but if the whole software crashes when trying to make the node labels visible, the problem lies within the software itself and should be solved when starting the program.\footnote{For Linux environments opening Gephi from command line with command "LIBGL\_ALWAYS\_SOFTWARE=1 ./gephi" can sometimes help.} 
 
-Both of these tools are also open source and free to download. All scripts written for this work available on GitHub.\footnote{\url{https://github.com/Heidi-Suurkaulio/mastersthesis} TODO right link later}
+Lastly, 
+
+All of these tools are open source and free to download. In the name of replicability and transparency, all scripts written for this work available on my GitHub page.\footnote{\url{https://github.com/Heidi-Suurkaulio/mastersthesis}}
 
 Basically the steps of network analysis are : \begin{enumerate}
 	\item Choosing the subject and data
@@ -109,11 +113,11 @@ The last step in the preparation of the network analysis is the selection of the
 	All models are wrong; some models are useful.\footcite[prefix]{statisticsfor}
 \end{quote}
 
-A graph is elementally a generalizing and simplifying model of complex social networks on the Swedish council of the Realm. Yet, when bulding any kinds of (computational) models, decisions between the complexity and abstraction must be made – in fact besides too simplifying models, too complex or overfitted ones are a problem on their own.\footcite{TODO} One of the most important question is what to include and and what to exclude. And, a more existential question is what we can model or even know about historical social networks. 
+A graph is elementally a generalizing and simplifying model of complex social networks on the Swedish council of the Realm. Yet, when bulding any kinds of (computational) models, decisions between the complexity and abstraction must be made – in fact besides too simplifying models, too complex or overfitted ones are a problem on their own.\footnote{TODO} One of the most important question is what to include and and what to exclude. And, a more existential question is what we can model or even know about historical social networks. 
 
 As I am working with pre-collected data, the choices have been made by the authors of the dataset Hakanen and Koskinen and by the scholars their work is leaning on. The data – and further the graph – is able to give a picture of the offically recorded family links within the council of the realm. However, it is not possible to know about the messy every day relationships, friendships, informal discussions, intentions, emotions or disputes these 257 men have had. It is important to understand the limitations of the data and model.
 
-Generally, what comes to the study of early modern period, source material concerning women, lower social classes or marginalized groups are harder to find.\footcite{TODO} 
+Generally, what comes to the study of early modern period, source material concerning women, lower social classes or marginalized groups are harder to find.\footnote{TODO} 
 However, at least noble women are included in the contemporary lineage diagram as seen in figure \ref{queenlineage}. So maybe a network including noblewomen or the councilors patrons would be possible to build.
 
 \begin{figure}
