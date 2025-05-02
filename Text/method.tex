@@ -147,3 +147,42 @@ Interestingly, some political picks are easy to spot on the genealogy chart of V
 As a matter of fact, genealogy charts were of a high value to the aristocracy on the early modern timeperiod. Family trees were to prove the noble birth and therefore to legitimate the high status and rank (the position signed by God). The charts have been so valuable that in some cases they have been enhanced or even forged.\footnote{TODO}
 
 One compelling question is wheither or not family trees can be understood as networks.\footnote{I have had unoffical discussions with my friends an colleques about the subject matter and most of them have counted family trees as networks.} Technically they do fit the criteria of a network with nodes (persons) and directed edges (inheritance). Furthermore, some text books have depicted family trees as an examples of simple networks.\footnote{See e.g. TODO} Obviously, family trees still have not been used in the sense of network analysis or as analytical tools as we know them today. But the contemporaries may have still been more familiar with the idea of networks than we may think.
+
+\subsection{the Script}
+For the conclusive analysis, I did some improvements to the Python cript. The script is available in GitHub\footnote{\url{https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/PythonScript}} and can be found in Appendix \ref{script}. The viable version of the script is largely based on the test run script, however I added the functionality and did some refactoring; adjustments to make the code more slick. 
+
+The scirpt reads and prints data in exaclty same format as the previous one. The input data must be formatted similarily to the example of Table \ref{tab1} in the .csv format. However, the name of the input file is given as a command line parameter. The new functionality is that also the timerange of the network can be delimited with command line parameters.
+
+The format of the command is as follows: 
+\begin{verbatim}
+python data_sifter.py Councillors_of_the_Realm1523-1680.csv
+\end{verbatim}
+
+This produces the network from the original timeperiod given in the dataset. And, for example, command "\texttt{python data\_sifter.py <dataset.csv> prior 1650}" and "\texttt{python data\_sifter.py <dataset.csv> post 1590}" limits the networks to councillors and their relatives appointed before 1650 or after 1590. Lastly the command "\texttt{python data\_sifter.py <dataset.csv> 1540 1620}" delimits the network to councillors and their relatives appointed between 1540 and 1620.
+
+When it comes to the script and the graph, I made some simplifications. The types of the relationships, such as brother, grandfather or , are not taken into account. Each relationship is taken from the dataset by the Id number and marked as an undirected edge with weight standard 1.0. This means that the graph does not separate blood relations from the relationships formed through marriages. As family ties per se have been mentioned to be important in the previous research, this graph depicts family ties as an abstraction.\footnote{TODO} 
+
+The second simplification is that only the years of appointments are taken into account, but the years of death are not. Most of the time the position of the councillor was a lifelong.\footcite[TODO]{HakanenAKoskinen2017} So, the graph can not give a defined picture of the amount of the councillors active during a certain timeperiod. Basically the graph represents the family network of councillors appointed during certain timeperiod, and answers the question: \textit{Who were appointed to the Council and to which degree they were related to each other?} The script could be further develop into regognizing the type of the relationship and taking the years of death–the obvious end to the position–into account.
+
+\subsubsection{Testing the script}
+Before anything else the script had to be tested. Testing is one of the most important–yet daunting–task in programming. Due the size and complexity of the Councillors dataset, the Python script is hard and ambiguous to test with the original data. To test the logic and behavior of the script I crated a small test dataset with simple dummy data. The test dataset is intentionally so small that it is readable by human. With the script the test dataset is available in GitHub.\footnote{\url{https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/PythonScript}} 
+
+The test dataset consist of 12 entries with values for name, Id number, (year of) appointment and family links. The names are represented by capital alphabets from A to L, and Ids are sequential numbers from 1 to 12. The values in appointment-column are numbers between 1000 and 1299, and there are intentionally four entries within every range of 100. The family links are represented by numbers found in the Ids except one which should be excluded by the script if everything works as planned. 
+
+\begin{table}
+	\caption{Example of the test dataset}
+	\centering
+	\begin{tabular}{cccc}	
+		\hline
+		Name; &Id; &Appointed; &Family\\
+		\hline
+		A; &1; &1000; &example 11\\
+		\hline
+		B; &2; &1000; &3, 4\\
+		\hline
+	\end{tabular}
+\end{table}
+
+When run with default setting the test dataset should produce 13 connections excluding the connection to the non-existent Id 30, as it does. Giving the range 1000-1999, 1100-1199 and 1200-1299 as arguments divides the dataset in the groups of four as intended. Lastly giving the "prior 1150" and "post 1138" as arguments reduces the amount of entries and connections as expected. With the small test dataset the algorithm should work as intended. Inconveniently, the accuracy of the connections still has to be checked manually. 
+
+To review the results the script gives with the original dataset I used some simple R script to do dublicate checking.

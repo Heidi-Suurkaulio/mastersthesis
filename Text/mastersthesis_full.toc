@@ -21,10 +21,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3}Fitting modern model on historical timeperiod}{19}{subsection.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Analysis}{22}{section.3}%
+\contentsline {subsection}{\numberline {2.4}the Script}{22}{subsection.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Testing the script}{23}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {2.4.1}Testing the script}{23}{subsubsection.2.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Conclusion}{23}{section.4}%
+\contentsline {section}{\numberline {3}Family ties between 1523 and 1680}{25}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}the Script to End All Scripts}{28}{appendix.A}%
+\contentsline {subsection}{\numberline {3.1}Prior 1601}{25}{subsection.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.1.1}the Last Man Standing: Nils Gyllenstierna}{25}{subsubsection.3.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2}Post Duke Charles' revenge}{25}{subsection.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3}In the Court of Queen Christina}{25}{subsection.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Conclusion}{25}{section.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A}the Script to End All Scripts}{29}{appendix.A}%

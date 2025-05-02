@@ -1,25 +1,25 @@
-\section{Analysis}
-The script is available in GitHub\footnote{\url{https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/PythonScript}} and can be found in Appendix \ref{script}. The final version of the script is direct descendant of the test run script, however I added the functionality of choosing the time range and did some adjustments to make the code more slick. Before anything else the script has to be tested.
-
-\subsection{Testing the script}
-Testing is one of the most important–yet daunting–task in programming. Due the size and complexity of the Councillors dataset, the Python script is hard and ambiguous to test with the original data. To test the logic and behavior of the script I crated a small test dataset with simple dummy data. The test dataset is intentionally so small that it is readable by human. With the script the test dataset is available in GitHub.\footnote{\url{https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/PythonScript}} 
-
-The test dataset consist of 12 entries with values for name, Id number, (year of) appointment and family links. The names are represented by capital alphabets from A to L, and Ids are sequential numbers from 1 to 12. The values in appointment-column are numbers between 1000 and 1299, and there are intentionally four entries within every range of 100. The family links are represented by numbers found in the Ids except one which should be excluded by the script if everything works as planned. 
+\section{Family ties between 1523 and 1680}
 
 \begin{table}
-	\caption{Example of the test dataset}
+	\caption{Absolute amount in different ranks}
 	\centering
-	\begin{tabular}{cccc}	
+	\begin{tabular}{cccccc}
 		\hline
-		Name; &Id; &Appointed; &Family\\
+		Commoner & Ennobled & Estate unknown & Unknown & Uradel & \\
 		\hline
-		A; &1; &1000; &example 11\\
-		\hline
-		B; &2; &1000; &3, 4\\
+		5 & 8 & 7 & 1 & 236 & = 257 \\
 		\hline
 	\end{tabular}
+	\caption{Proportional amount in defferent ranks}
+	\centering
+	\begin{tabular}{cccccc}
+		\hline
+	    Commoner & Ennobled & Estate unknown & Unknown & Uradel & \\
+	    \hline
+	    1.9 & 3.1 & 2.7 & 0.3 & 91.8 & \% \\
+	\end{tabular}
 \end{table}
-
-When run with default setting the test dataset should produce 13 connections excluding the connection to the non-existent Id 30, as it does. Giving the range 1000-1999, 1100-1199 and 1200-1299 as arguments divides the dataset in the groups of four as intended. Lastly giving the "prior 1150" and "post 1138" as arguments reduces the amount of entries and connections as expected. With the small test dataset the algorithm should work as intended. Inconveniently, the accuracy of the connections still has to be checked manually. 
-
-To review the results the script gives with the original dataset I used some simple R script to do dublicate checking. 
+\subsection{Prior 1601}
+\subsubsection{the Last Man Standing: Nils Gyllenstierna}
+\subsection{Post Duke Charles' revenge}
+\subsection{In the Court of Queen Christina}
