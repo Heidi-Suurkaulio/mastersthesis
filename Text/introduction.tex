@@ -53,6 +53,7 @@ Authors of the councillors dataset, Hakanen and Koskinen, have explained the dat
 All in all, computer-aided historical network analysis is somewhat rare compared to the traditional methods of historiography. Nevertheless, it also seems that the pre-modern elite is collectively understood as a network amongst historians, and the ties between the members of nobility have been in the scope of interest for some time now. Which makes applying the computer-aided network analysis relevant. The aim of this work is to join the rather uncommon method of historical network analysis with the classic research topic, and to further explore and develop the method in the context of historical research.
 
 \subsection{The Council of the Realm}
+\label{councilofrealm}
 \begin{quote}
 	The position of the councillors of the realm was well recognized by the whole society. They were an elite group which enjoyed formal position in the power structure. Their job was to help the monarch reach decisions.\footcite[p. 26.]{agencyAndStateBuilding}
 \end{quote}
@@ -72,7 +73,7 @@ After the death of Charles IX in 1611, Charles' oldest son Gustavus Adolphus (Gu
 The position of the nobility and the Council started to decline drastically after the Charles XI's (1655-1697) succession of the throne in 1672. In the Diet of 1680 the monarch practically retracted the status of the Council. In 1681 the Council of the Realm was renamed the \textit{Royal Council} (swe. Kungligt råd, fi. kuninkaallinen neuvos). Concurrently, the Great Reduction was being implemented, meaning that the fiefs\footnote{Lands given to the aristocracy.} were reclaimed to the state. The reign of Charles XI is retroactively called the Age of Absolutims in Sweden.\footcites[p. 289-295,]{pSuurvalta}[p. 8-9.]{personalAgency} Finally, in the 18th century the role of the Council steadily declined further, and it was disestablished during the reign of Gustavus III (1772-1792).\footcite[p. 14.]{hopesAndFearsIntro}
 
 \begin{table}
-	\caption{Parameters on the number of councillors between 1520-1680.(\cite{councillorsDS}) Calclutaed with R script: https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/RScripts}
+	\caption[Parameters on the number of councillors between 1520-1680]{Parameters on the number of councillors between 1520-1680.(\cite{councillorsDS}) Calclutaed with R script: https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/RScripts}
 	\label{tab:councillors}
 	\centering
 \begin{tabular}{c c c c c c}
@@ -87,7 +88,7 @@ The position of the nobility and the Council started to decline drastically afte
 \begin{figure}[h]
 	\includegraphics[width=\linewidth]{councillorsPerYear.png}
 	\centering
-	\caption{The changes of the number of councillors per each year.(\cite{councillorsDS}) Plotted with R script: https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/RScripts} 
+	\caption[The changes of the number of councillors per each year 1520-1680]{The changes of the number of councillors per each year.(\cite{councillorsDS}) Plotted with R script: https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/RScripts} 
 	\centering
 	\label{fig:peryear}
 \end{figure}
@@ -130,7 +131,7 @@ As the relatively large dataset is compiled by humans, it leaves some room for t
 % TODO excluding women and lower classes
 
 \begin{sidewaystable}
-	\caption{Example rows of the dataset: Gyllenhorn, Joen Olsson and Natt och Dag, Måns Johansson (\cite{councillorsDS})}
+	\caption[Example rows of the dataset]{Example rows of the dataset: Gyllenhorn, Joen Olsson and Natt och Dag, Måns Johansson (\cite{councillorsDS})}
 	\label{tab1}
 \resizebox{\textwidth}{!}{%
 	\begin{tabular}{|c | c | c | c | c | c | c | c | c | c|}

@@ -55,7 +55,6 @@ However, the analysis is not that straightforward, sometimes the steps 2 and 3 m
 To draft the structure of the graph and understand the nuances of the given data, a test run was carried out. The test run was done with a simple Python script, and no attention was paid to the temporal aspects of the network or the potential directions within the graph. The script and Gephi project used, and the visualization of the graph of the test run is available in GitHub in the TestRun folder\footnote{\url{https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/TestRun}}
 
 The data processing was started by manually cleaning the data in LibreOffice Calc (equivalent to Microsoft Excel). The columns and rows containing information of the source material of the dataset and councillor's years active were removed. That made the structure of the data coherent and easier to manipulate with the Python script. The manually cleaned data is exported as .csv (comma separated values) file. The .csv file's header (the first line of the file) should be modified so that the column name "No." is changed to "Id" and "Family members in the council of the realm" is changed to "Family", the first one can cause an error if referenced in the Python code, the latter is inconveniently long.
-%table 2
 
 The script itself reads the data from the .csv file. The connections between the councillors are separated from the "Family" column, based on the knowledge that each connection is marked with the id number of another councillor. The connections are then formatted and printed to .csv file. The connections .csv file containing values for "Source" id of the source concillor, "Target" id of target councillor, "Type" standard "Undirected", "Id" id number for the connection, "Weight" standard 1.0. Another .csv file is formatted and printed with the information of councillors' names and id numbers.
 
@@ -129,7 +128,7 @@ The social structure was justified by the Lutheran theology and religion. Accord
 
 \begin{figure}
 	\includegraphics[width=\linewidth]{QueenChristinaLineage.png}
-	\caption{Lineage of the house of Vasa from the \textit{Hortus Regius} or "Queen Christina's Genealogical Tree with Political Emblems".(\cite{hortusregius})} 
+	\caption[Lineage of the house of Vasa from the \textit{Hortus Regius}]{Lineage of the house of Vasa from the \textit{Hortus Regius} or "Queen Christina's Genealogical Tree with Political Emblems".(\cite{hortusregius})} 
 	\centering
 	\label{queenlineage}
 \end{figure}
@@ -151,7 +150,7 @@ One compelling question is wheither or not family trees can be understood as net
 \subsection{the Script}
 For the conclusive analysis, I did some improvements to the Python cript. The script is available in GitHub\footnote{\url{https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/PythonScript}} and can be found in Appendix \ref{script}. The viable version of the script is largely based on the test run script, however I added the functionality and did some refactoring; adjustments to make the code more slick. 
 
-The scirpt reads and prints data in exaclty same format as the previous one. The input data must be formatted similarily to the example of Table \ref{tab1} in the .csv format. However, the name of the input file is given as a command line parameter. The new functionality is that also the timerange of the network can be delimited with command line parameters.
+The scirpt reads and prints data in exaclty same format as the previous one. The input data must be formatted similarily to the example of Table \ref{tab1} in the .csv format. However, the name of the input file is given as a command line parameter. The new functionality is that also the timerange of the network can be delimited with command line parameters. As a side-effect of the timerange functionality, the "ghost" nodes discussed in Chapter \ref{sources} are removed automatically.
 
 The format of the command is as follows: 
 \begin{verbatim}
