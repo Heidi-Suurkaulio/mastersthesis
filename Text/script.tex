@@ -72,7 +72,7 @@ for index, entr in dataset.iterrows():
             i = i + 1
 
 # print all
-dataset.to_csv("councilors.csv", columns=["Name"], sep=";")
+dataset.to_csv("councillors.csv", columns=["Name"], sep=";", header=["Label"])
 
 with open("connections.csv", "w", newline='') as csvfile:
     wr = writer(csvfile)
