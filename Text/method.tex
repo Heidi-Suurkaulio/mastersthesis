@@ -8,6 +8,7 @@ My method is computer aided (social) network analysis. It is one of the most imp
 %Furthermore, in the field of technology network analysis does have some everyday application, such as the analysis of the internet. 
 
 \subsection{Defining the network}
+\label{network}
 Network analysis combines mathematics, statistics and social scineces. Primarily it is based on the mathematical graph theory. A graph is a representation of the network. Graph includes nodes (also colled vertice) and edges (also called links and connections).
 
 \begin{figure}[h]
@@ -18,7 +19,21 @@ Network analysis combines mathematics, statistics and social scineces. Primarily
 \end{figure}
 In this context the graph's nodes depict individual councillors with the input of name and id number. Correspondingly the edges represent the kinships between two nodes. For instance, in Figure 1 we can see that Johan Bengtsson (Schroderus) Skytte (id 184) is Bengt Johansson Skytte's (id 183) father and a maternal grandfather for Johan Göransson Gyllenstierna (id 90) and Göran Göransson Gyllenstierna (id 87). Johan Göransson and Göran Göransson are brothers, however, their father is not mentioned in the dataset. Göran Göransson also has further links in the network. \footfullcite{councillorsDS}
 
-Calculating different statistics is a crucial part of the network analysis. One of the most important measures is the \textbf{node degree}. In all its simplicity node degree means the amount of edges connected to a specific node. For example, the degree of Johan Bengtsson (Schroderus) Skytte (id 184) is three or the degree of Bengt Johansson Skytte (id 183) is one. The \textbf{average degree} is the mean [keskiarvo] of all the node degrees of the specific graph. The \textbf{density} of the network is based on the node degrees. In very dense network almost every node is connected to each other, but a sparse graph has just a few edges in it.
+Calculating different statistics is a crucial part of the network analysis. One of the most important measures is the \textbf{node degree}. In all its simplicity node degree means the amount of edges connected to a specific node. For example, the degree of Johan Bengtsson (Schroderus) Skytte (id 184) is three or the degree of Bengt Johansson Skytte (id 183) is one. The \textbf{average degree} is the mean [keskiarvo] of all the node degrees of the specific graph. 
+
+The \textbf{density} of the network is based on the node degrees. In a dense network almost every node is connected to each other, but a sparse graph has just a few edges in it. The scale of density is from 0 to 1, 1 meaning a graph with every node connected to every other node. In pratice density is probably not the most depicting parameter of social networks. It is heavily dependant on the size of the network. 
+
+The amount of all possible edges increase rapidly with the number of nodes. Formally, the number of possible edges follows the binomial coefficient. The formula being:\footcite[p. 16.]{laininen2002}
+\begin{equation*}
+\binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{n(n-1)...(n-k+1)}{k!}
+\end{equation*}
+In this case $k = 2$, because two nodes share one edge. The variable n is the amount of nodes in the graph. In R environment this can be calculated easily using the function \texttt{choose(n,k)}. For example in a graph consisting of 257 nodes (the amount of the councillors in the dataset) the amount of possible edges is 32 896:
+\begin{equation*}
+\binom{257}{2} = \frac{257!}{2!(257-2)!}
+\end{equation*}
+or \texttt{choose(257,2)}. That is why I choose the programming!
+
+In practice the rapidly growing amount of possible edges makes it inefficient to compare two graphs of different size. The number of possible edges in a graph with 100 nodes is 4 950 and in a graph with 101 nodes it is 5 050 a difference of 100 possible edges. In the context of social networks the difference is signifficant.
 
 Another important factor is whether the graph is \textbf{directed} or \textbf{undirected}. In directed graph the edges have directions, like in the communication networks a message has a sender and a receiver. The directions are marked with an arrow. In undirected graphs the edges are bidirectional (two way), for example, a relationship between two brothers can be understood as undirected. Directed graphs have more features and a more complex structures, for instance, the degrees of inbound and outbound edges can be counted separately. For sipmlicity, the graphs presented in this work are undirected.
 
