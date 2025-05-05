@@ -63,6 +63,8 @@ The amount of isolated nodes is significant: 26–as in the larger graph it was 
 The nodes with highest degree ($\geq$ 4) were of the remarkable noble families such as Bielke and Stenbock, however the Bååt family is more apparent in this graph than in the larger one or any of the later ones (TODO check). Did the house loose its standing somehow, or did they blend with the other noble families?
 
 \subsubsection{the Last Man Standing: Nils Gyllenstierna}
+Nils Gyllenstierna had an exceptional political career. He was present 
+
 In fact the last councillor to be executed in Sweden was in 1605.%TODO 
 
 \subsection{Post Duke Charles' revenge}
@@ -71,9 +73,11 @@ Practically, this graph begins from the year 1602 when duke Charles had to appoi
 The number of isolated nodes is significantly lower: 16, compared to the 26 prior 1600 or the 33 in the whole time period. Again it still must be remembered that limiting the time range cuts some family ties present in the dataset. Subsequently, the proportion of nodes with at least one edge is $130/146=0.890...$ ,thereby, the probability of councillor having at least one direct relation in the Council was now $\approx 89\%$. That is 12 precentage points greater than the 77\% in the 16th century, and two presentage points greater then the 87\% from the whole time period.
 
 \begin{table}
-	\caption[Edges needed]{Edges needed to...}
+	\caption{Number of edges needed for different densities of network}
 	\label{edges}
 	\begin{tabular}{cccc}
+		\hline
+		 & Amount of possible edges &&\\
 		\hline
 		density & 32 896 (all) & 6 105 (prior 1600) & 10 585 (post 1601) \\
 		\hline 
@@ -86,9 +90,7 @@ The number of isolated nodes is significantly lower: 16, compared to the 26 prio
 	\end{tabular}
 \end{table}
 
-Also the density of this graph is the largest: 0.017. In prior 1600 it was 0.015 and from the whole time period 0.011. To make the denisities comparable to some degree, the amount of edges needed for different densities is counted in Table \ref{edges}. Still, the scale of the larger graph makes it uncomparable to the smaller graphs. The smaller graph now seem coloser to one another.
-
-Even the size not working on favour of this post 1601 graph, it still has higher density compared to the prior 1600 graph. With these numbers it can be argumented that the post 1601 graph is more dense than the one prior 1600. 
+Also the density of this graph is the largest: 0.017. In prior 1600 it was 0.015 and from the whole time period 0.011. To make the denisities comparable to some degree, the amount of edges needed for different densities is counted in Table \ref{edges}. Still, the scale of the larger graph makes it hard to compare to the other graphs, so, I will focus on the two smaller ones. The graph prior 1600 would need $\approx 14$ more edges to have the density of 0.017, whereas in the graph post 1601 the difference between the density of 0.015 and 0.017 is $\approx 26$. This behaviour is explained in the subchapter \ref{network}. So, even though the time scale is similar (80 years), the density and the absolute amount of edges is different. This means that it can be argumented that the post 1601 graph is more dense than the one prior 1600. 
 
 What the isolated nodes can tell us?
 
@@ -96,16 +98,29 @@ All in all, 17th century has been called in the previous literature "the century
 
 \subsection{In the Court of Queen Christina}
 \label{christina}
-Queen Christina was the daughter of the king Gustavus Adolphus and queen ...
+Queen Christina was the daughter of the king Gustavus Adolphus and queen consort Maria Eleonora of Brandenburg (1599-1655). She inherited the throne at the age of 6, after her fathers sudden death in the battlefield in November 1632. Before she was declared an adult at the age of 18 in 1644, the kingdom was ruled by a regnant.\footnote{TODO source} The reign and personal life of queen Christina are fascinating chapters in the Swedish history.\footnote{For more information see e.g. Peter Englund \textit{Silvermasken: en kort biografi över drottning Kristina} finnish version \textit{Kuningatar Kristiina}, or Marie-Louise Rodén \textit{Drottning Christina: en biografi}.}
 
-As queen Christina's reign lasted for ten years the graph is not comparable to the other larger graphs, despite that, it is interesting in its own right. 
+Due that Christina's father was frequently away from Sweden and the long period of the interregnum, the authority of the Council of the Realm had grown remarkably when Christina was enthroned. Contrary to the previous monarchs, she was forced to go for the Council to get councel, yet, the situation did not stay that way for long. On the word of Hakanen and Koskinen: 
+
+\begin{quote}
+	Christina played the high nobility at their own social network game rather than enter into open warfare with them. That is, she quickly created a large group of loyal supporters around her $\dots$
+\end{quote}
+
+Furthermore, she appointed many new councillors to dilute the power of the original Council. By the year 1654 she had appointed 45 new councillors.\footcite[p. 64. ]{HakanenAKoskinen2017}
+
+The network of councillors appointed by queen Christina is displayed in Figure \ref{queenChristinaCouncillors}. As queen Christina's reign lasted for only ten years the graph is not comparable to the other larger graphs, despite that, it is interesting in its own right. The graph consist of 45 councillors, all of them which must have been close to queen Christina in one way or another.
+
+\begin{figure}	
+	\includegraphics[width=\linewidth]{councillors_1644-1654.png}
+	\caption[Councillors appointed by queen Christina]{A graph of councillors appointed by queen Christina between 1644 and 1654.(\cite{councillorsDS})}
+	\label{queenChristinaCouncillors}
+	\centering
+\end{figure}
+
+Overall, the network seems sparse, but, an interestingly clustered pattern can be found in the middle of the network. Eight councillors: Karl Mauritz Johansson Lewenhaupt (125), Gustaf Adolf Johansson Lewenhaupt (126), Gustaf Otto Gustafsson Stenbock (207), Fredrik Gustafssonare Stenbock (204), Erik Gustafssonall Stenbock (202), Bengt Gabrielsson Oxenstierna af Korsholm och Wasa (148), Gabriel Gabrielsson Oxenstierna af Korsholm och Wasa (154) and Hans Claesson Wachtmeister (240) are all related to each other direclty or indirectly. 
+
+This tightly woven network seems to concentrate around the two brothers Gustaf Otto Gustafsson Stenbock and Erik Gustafssonall Stenbock. Due that they presumably had a significant position in the political life. What led them to have this position?
 
 Rosenhane who gave the Hortus Regius book
 
 For example king Gustavus Adolpus' illegitimate son Gustaf Gustafsson af Vasaborg (241) can be found on the Council. 
-\begin{figure}
-	\includegraphics[width=\linewidth]{councillors_1644-1654.png}
-	\caption[Councillors appointed by queen Christina]{A graph of councillors appointed by queen Christina between 1644 and 1654.(\cite{councillorsDS})} 
-	\centering
-\end{figure}
-
