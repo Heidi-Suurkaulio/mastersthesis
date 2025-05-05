@@ -7,7 +7,7 @@ My method is computer aided (social) network analysis. It is one of the most imp
 
 %Furthermore, in the field of technology network analysis does have some everyday application, such as the analysis of the internet. 
 
-\subsection{Defining the network}
+\subsection{Defining the Network}
 \label{network}
 Network analysis combines mathematics, statistics and social scineces. Primarily it is based on the mathematical graph theory. A graph is a representation of the network. Graph includes nodes (also colled vertice) and edges (also called links and connections).
 
@@ -37,7 +37,7 @@ In practice the rapidly growing amount of possible edges makes it inefficient to
 
 Another important factor is whether the graph is \textbf{directed} or \textbf{undirected}. In directed graph the edges have directions, like in the communication networks a message has a sender and a receiver. The directions are marked with an arrow. In undirected graphs the edges are bidirectional (two way), for example, a relationship between two brothers can be understood as undirected. Directed graphs have more features and a more complex structures, for instance, the degrees of inbound and outbound edges can be counted separately. For sipmlicity, the graphs presented in this work are undirected.
 
-\subsection{Implementation of the network analysis}
+\subsection{Implementation of the Network Analysis}
 I use the combination of Python programming language and Gephi software in the data processing and analysis. Python is used for extracting the data from the councillors-dataset and formulating it in the right format: readable for Gephi. Whereas the actual network analysis: visualization and calculating statistics, is performed with Gephi. 
 
 Python is a high level\footnote{Meaning code intended to be read and undersood by humans if compared for example with binary code written only with 0s and 1s.} programming language. Python can be used in variety of tasks including data processing, machine learning (AI models) or web development. Python is intended to be of object oriented programming style, however, it is not determined to be used only on that paradigm.\footcite[p. 1.]{pythonbook} For instance, my personal programming style is more in the imperative style. 
@@ -64,7 +64,7 @@ Basically the steps of network analysis are : \begin{enumerate}
 \end{enumerate}
 However, the analysis is not that straightforward, sometimes the steps 2 and 3 must be repeated and re-repeated. Yet, on some circumstances the graph is not visualized or the statistics are not deemed important. These steps will be discussed in practice below.
 
-\subsubsection{Test run}
+\subsubsection{Test Run}
 %TODO fix councillor / councillor typo
 
 To draft the structure of the graph and understand the nuances of the given data, a test run was carried out. The test run was done with a simple Python script, and no attention was paid to the temporal aspects of the network or the potential directions within the graph. The script and Gephi project used, and the visualization of the graph of the test run is available in GitHub in the TestRun folder\footnote{\url{https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/TestRun}}
@@ -123,7 +123,7 @@ Gephi does have a switch whether or not self loops are allowed in the graph, and
 
 The last step in the preparation of the network analysis is the selection of the layout algorithm. For the test run an algorithm called Yifan Hu was used with default configurations except parameter theta set to 2.0. Then layout option "noOverlap" was chosen to separate possibly overlapping nodes, and some further manual placement of the nodes was done to make the graph more readable. The outcome was visually somewhat dense network in the middle and mostly unconnected isolated nodes around it. 
 
-\subsection{Fitting modern model on historical timeperiod}
+\subsection{Fitting Modern Model on a Historical Time Period}
 \begin{quote}
 	Every model is an approximation.\\
 	All models are wrong; some models are useful.\footcite[prefix]{statisticsfor}
@@ -178,7 +178,7 @@ When it comes to the script and the graph, I made some simplifications. The type
 
 The second simplification is that only the years of appointments are taken into account, but the years of death are not. Most of the time the position of the councillor was a lifelong.\footcite[TODO]{HakanenAKoskinen2017} So, the graph can not give a defined picture of the amount of the councillors active during a certain timeperiod. Basically the graph represents the family network of councillors appointed during certain timeperiod, and answers the question: \textit{Who were appointed to the Council and to which degree they were related to each other?} The script could be further develop into regognizing the type of the relationship and taking the years of death–the obvious end to the position–into account.
 
-\subsubsection{Testing the script}
+\subsubsection{Testing the Script}
 Before anything else the script had to be tested. Testing is one of the most important–yet daunting–task in programming. Due the size and complexity of the Councillors dataset, the Python script is hard and ambiguous to test with the original data. To test the logic and behavior of the script I crated a small test dataset with simple dummy data. The test dataset is intentionally so small that it is readable by human. With the script the test dataset is available in GitHub.\footnote{\url{https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/PythonScript}} 
 
 The test dataset consist of 12 entries with values for name, Id number, (year of) appointment and family links. The names are represented by capital alphabets from A to L, and Ids are sequential numbers from 1 to 12. The values in appointment-column are numbers between 1000 and 1299, and there are intentionally four entries within every range of 100. The family links are represented by numbers found in the Ids except one which should be excluded by the script if everything works as planned. 
