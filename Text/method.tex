@@ -11,19 +11,22 @@ My method is computer aided (social) network analysis. It is one of the most imp
 \label{network}
 Network analysis combines mathematics, statistics and social scineces. Primarily it is based on the mathematical graph theory. A graph is a representation of the network. Graph includes nodes (also colled vertice) and edges (also called links and connections).
 
-\begin{figure}[h]
+\begin{figure}
 	\includegraphics[scale=0.25]{example_network.drawio.png}
 	\centering
 	\caption{A sample from the graph} 
 	\centering
+	\label{samplegraph}
 \end{figure}
-In this context the graph's nodes depict individual councillors with the input of name and id number. Correspondingly the edges represent the kinships between two nodes. For instance, in Figure 1 we can see that Johan Bengtsson (Schroderus) Skytte (id 184) is Bengt Johansson Skytte's (id 183) father and a maternal grandfather for Johan Göransson Gyllenstierna (id 90) and Göran Göransson Gyllenstierna (id 87). Johan Göransson and Göran Göransson are brothers, however, their father is not mentioned in the dataset. Göran Göransson also has further links in the network. \footfullcite{councillorsDS}
+In this context the graph's nodes depict individual councillors with the input of name and id number. Correspondingly the edges represent the kinships between two nodes. For instance, in Figure \ref{samplegraph} we can see that Johan Bengtsson (Schroderus) Skytte (id 184) is Bengt Johansson Skytte's (id 183) father, and a maternal grandfather for Johan Göransson Gyllenstierna (id 90) and Göran Göransson Gyllenstierna (id 87). Johan and Göran Göransson are brothers, however, their father is not mentioned in the dataset. Göran Göransson also has further links in the network. \footcite{councillorsDS}
 
-Calculating different statistics is a crucial part of the network analysis. One of the most important measures is the \textbf{node degree}. In all its simplicity node degree means the amount of edges connected to a specific node. For example, the degree of Johan Bengtsson (Schroderus) Skytte (id 184) is three or the degree of Bengt Johansson Skytte (id 183) is one. The \textbf{average degree} is the mean [keskiarvo] of all the node degrees of the specific graph. 
+Calculating different statistics is a crucial part of the network analysis. One of the most important measures is the \textbf{node degree}. The node degree simply means the number of edges adjoined to a specific node.\footcite[pp. 2-3.]{RajPM2018} For example, the degree of the node depicting Johan Bengtsson (Schroderus) Skytte (id 184) is three, and the degree of the node depicting Bengt Johansson Skytte (id 183) is one. 
 
-The \textbf{density} of the network is based on the node degrees. In a dense network almost every node is connected to each other, but a sparse graph has just a few edges in it. The scale of density is from 0 to 1, 1 meaning a graph with every node connected to every other node. In pratice density is probably not the most depicting parameter of social networks. It is heavily dependant on the size of the network. 
+The \textbf{average degree} is the mean of all the node degrees of the specific graph. It is calculated by adding all the node degrees and dividing the sum with the number of nodes.\footcite[pp. 3-4.]{RajPM2018} In the case of this study, the average degree describes the average number of direct family links councillors had within the Council. The average degree of Figure \ref{samplegraph} is $\frac{1 + 3 + 2 + 3}{4} = 2.25$.
 
-The amount of all possible edges increase rapidly with the number of nodes. Formally, the number of possible edges follows the binomial coefficient. The formula being:\footcite[p. 16.]{laininen2002}
+The \textbf{density} of the network is also based on the node degrees. In a dense network almost every node is connected to each other, but a sparse graph has just a few edges between the nodes. The density is calculated by dividing the number of actual edges with the mamximum number of edges. The scale of density is from 0 to 1, 1 implying a \textbf{complete graph}. In a complete graph each node is adjoined to each other node.\footcite[pp. 5-6.]{RajPM2018} In pratice, density is probably not the most depicting parameter of social networks because it is heavily dependant on the size of the network. 
+
+The maximum edges–meaning the amount of all possible edges–increases rapidly with the number of nodes. Formally, the maximum edges follows the \textit{binomial coefficient}. The formula being:\footcites[p. 16.]{laininen2002}[pp. 5-6.]{RajPM2018}
 \begin{equation*}
 \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{n(n-1)...(n-k+1)}{k!}
 \end{equation*}
@@ -31,7 +34,7 @@ In this case $k = 2$, because two nodes share one edge. The variable n is the am
 \begin{equation*}
 \binom{257}{2} = \frac{257!}{2!(257-2)!}
 \end{equation*}
-or \texttt{choose(257,2)}. That is why I choose the programming!
+or \texttt{choose(257,2)} with R.
 
 In practice the rapidly growing amount of possible edges makes it inefficient to compare two graphs of different size. The number of possible edges in a graph with 100 nodes is 4 950 and in a graph with 101 nodes it is 5 050 a difference of 100 possible edges. In the context of social networks the difference is signifficant.
 
@@ -44,7 +47,7 @@ Python is a high level\footnote{Meaning code intended to be read and undersood b
 
 I selected Python due its simple syntax and ease in implementing relatively small tasks in data processing. The language is understandable and widely used amongst scientists, which makes the work replicable. To be precise the scripts are written with Python 3, exact version being Python 3.11.7.
 
-As graphs are structures commonly used in programming, it would have been possible to conduct the actual network analysis using tools provided by Python, yet, Gephi software provides a graphical user interface (GUI) and more intuitive tools for the manipulation of the graph. Furthermore, the Gephi format makes the data and graph accessible also for non programmers.
+As graphs are structures commonly used in programming, it would have been possible to conduct the actual network analysis using tools provided by Python or R\footnote{See e. g. Raj P.M., Krishna, Ankith Mohan and K.G Srinivasa \textit{Practical Social Network Analysis with Python} or Dehmer, Matthias; Shi, Frank Emmert-Streib and Yongtang Shi \textit{Computational Network Analysis with R}.}, yet, Gephi software provides a graphical user interface (GUI) and more intuitive tools for the manipulation and visualization of the graph. Furthermore, the Gephi format makes the data and graph accessible also for non programmers.
 
 Gephi is a software for network visualization and analysis. It contains tools for manipulating, filtering, clustering and visualizing the graph. It has built in appliances for fixing errors in data and calculating necessary statistics.\footcite{gephi} Gephi reads data from text format (comma separated values .csv) or Microsoft Excel tables (XLSX), and Gephi projects are saved as .gephi files. The processed graphs and data can be exported as images or tables.  
 
@@ -134,7 +137,7 @@ A graph is elementally a generalizing and simplifying model of complex social ne
 
 As I am working with pre-collected data, many of the significant choices have been made by the authors of the dataset, Hakanen and Koskinen, and by the scholars their work is leaning on. Thus, it is important to understand the limitations of the data and model. The data–and consequently the graph–is able to give an abstraction of the offically recorded family links inside the Council of the Realm. However, with the data in question, it is not possible to know about the messy every day relationships, friendships, informal discussions, intentions, emotions or disputes these 257 men have had. 
 
-The general historical data also has its limitations. What comes to the study of early modern period, the scholars are working with a finite body of source material. As mentioned in the section \ref{sources} the national order of keeping records of the population was given in 1686. And, source material concerning lower social classes like peasants, women or marginalized groups are even harder to find.\footnote{TODO} Still, at least noble women are included in the contemporary lineage diagrams as seen later in Figure \ref{queenlineage}, which in itself means that women had meaning and status in the social realm. So maybe building a network including noblewomen or the noblemen and their clients would be an achievable task in the future.
+The general historical data also has its limitations. What comes to the study of early modern period, the scholars are working with a finite body of source material. As mentioned in the section \ref{sources} the national order of keeping records of the parish population was given in 1686. And, source material concerning lower social estates and groups like peasants, women or marginalized groups are even harder to find.\footnote{TODO} Still, at least noble women are included in the contemporary lineage diagrams as seen later in Figure \ref{queenlineage}, which in itself means that women had meaning and status in the social realm. So maybe building a network including noblewomen or the noblemen and their clients would be an achievable task in the future.
 
 As discussed in the beginning of this section (\ref{method}) networks were not explicitly part of the early modern social or political theory. However, did the contemporaries understand their social relations–families and friendships–as networks is a more complex question. And it probably cannot ever be answered undisputedly. Still, when applying a modern model to historical context, it is important to remember that we are operating on modern time with modern understanding, and be aware of the possible anachronims.
 
@@ -149,7 +152,7 @@ The social structure was justified by the Lutheran theology and religion. Accord
 	\label{queenlineage}
 \end{figure}
 
-For instance, a widely known manuscript from early modern period \textit{Hortus Regius} ("the Royal Guarden") can be used to illustrate the worldview of the early modern nobility. \textit{Hortus Regius} is digitized and freely available on the internet making it easy to approach.\footnote{In 2025: Internet Archive: \url{https://archive.org/details/urn-nbn-se-kb-digark-4937173/mode/1up} Library of Congress: \url{https://www.loc.gov/resource/gdcwdl.wdl\_17187/?st=gallery}.} The book was given to queen Christina by a diplomat Shering Rosenhane (1609-1663) in circa 1645. It consists of delicately illustrated political emblems\footnote{Instructions, virtues, metaphors} and noble family trees leading to queen Christina.\footcites{congresslibrary}[p. 271.]{BlennowAnna} The manuscript has been widely used by scholars of early modern North.
+For instance, a widely known manuscript from early modern period \textit{Hortus Regius} ("the Royal Guarden") can be used to illustrate the worldview of the early modern nobility. \textit{Hortus Regius} is digitized and freely available on the internet making it easy to approach.\footnote{In 2025: Internet Archive: \url{https://archive.org/details/urn-nbn-se-kb-digark-4937173/mode/1up} Library of Congress: \url{https://www.loc.gov/resource/gdcwdl.wdl\_17187/?st=gallery}.} The book was given to queen Christina by a diplomat Shering Rosenhane (1609-1663) in circa 1645. It consists of delicately illustrated political emblems\footnote{Instructions, virtues, metaphors} and noble family trees leading to queen Christina.\footcites{congresslibrary}[p. 271.]{BlennowAnna} The manuscript has been widely used by scholars of early modern Norden.
 
 In his monography \textit{Pohjoinen suurvalta} Petri Karonen interprets the drawing of a building and scale found in \textit{Hortus Regius} as a metaphor to the structure of the kingdom. The building consists of four floors on top of each other. Each floor represents each estate. Next to the building is a scale with a crown on one side and the symbols of the four estates on the other. When the crown and the symbols are present, the scale is in equilibrium. The hierarcical structure of the building with the scale were symbols of the ideal static, harmonious and immutable world order.\footcite[pp. 162-165.]{pSuurvalta}
 

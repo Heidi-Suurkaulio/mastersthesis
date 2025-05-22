@@ -15,40 +15,40 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1}Defining the Network}{12}{subsection.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Implementation of the Network Analysis}{13}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}Implementation of the Network Analysis}{14}{subsection.2.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.2.1}Test Run}{15}{subsubsection.2.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}Fitting Modern Model on a Historical Time Period}{17}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Fitting Modern Model on a Historical Time Period}{18}{subsection.2.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4}the Script}{21}{subsection.2.4}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.4.1}Testing the Script}{22}{subsubsection.2.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Family Ties Between 1520 and 1680}{23}{section.3}%
+\contentsline {section}{\numberline {3}Family Ties Between 1520 and 1680}{24}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Prior to Year 1600}{25}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}Prior to Year 1600}{26}{subsection.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.1}The Last Man Standing: Nils Gyllenstierna}{26}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}The Last Man Standing: Nils Gyllenstierna}{27}{subsubsection.3.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Post Duke Charles' Revenge}{27}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Post Duke Charles' Revenge}{28}{subsection.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}In the Court of Queen Christina}{28}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}In the Court of Queen Christina}{29}{subsection.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Conclusion}{31}{section.4}%
+\contentsline {section}{\numberline {4}Conclusion}{32}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{33}{section*.4}%
+\contentsline {section}{References}{34}{section*.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Literature}{33}{section*.5}%
+\contentsline {subsection}{Literature}{34}{section*.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Online}{34}{section*.6}%
+\contentsline {subsection}{Online}{36}{section*.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Documentation}{35}{section*.7}%
+\contentsline {subsection}{Documentation}{36}{section*.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Python Script Used in Data Extraction}{36}{appendix.A}%
+\contentsline {section}{\numberline {A}Python Script Used in Data Extraction}{37}{appendix.A}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Graph 1520-1680}{38}{appendix.B}%
+\contentsline {section}{\numberline {B}Graph 1520-1680}{39}{appendix.B}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C}Graph Prior 1600}{39}{appendix.C}%
+\contentsline {section}{\numberline {C}Graph Prior 1600}{40}{appendix.C}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D}Graph Post 1601}{40}{appendix.D}%
+\contentsline {section}{\numberline {D}Graph Post 1601}{41}{appendix.D}%
