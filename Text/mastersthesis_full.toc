@@ -21,34 +21,34 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3}Fitting Modern Model on a Historical Time Period}{19}{subsection.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4}the Script}{22}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}The Script}{23}{subsection.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.1}Testing the Script}{23}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.1}Testing the Script}{24}{subsubsection.2.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Family Ties Between 1520 and 1680}{25}{section.3}%
+\contentsline {section}{\numberline {3}Family Ties Between 1520 and 1680}{26}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Prior to Year 1600}{27}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}Prior to Year 1600}{28}{subsection.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.1}The Last Man Standing: Nils Gyllenstierna}{28}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}The Last Man Standing: Nils Gyllenstierna}{29}{subsubsection.3.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Post Duke Charles' Revenge}{29}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Post Duke Charles' Revenge}{30}{subsection.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}In the Court of Queen Christina}{30}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}In the Court of Queen Christina}{31}{subsection.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Conclusion}{33}{section.4}%
+\contentsline {section}{\numberline {4}Conclusion}{34}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{35}{section*.4}%
+\contentsline {section}{References}{36}{section*.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Literature}{35}{section*.5}%
+\contentsline {subsection}{Literature}{36}{section*.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Online}{37}{section*.6}%
+\contentsline {subsection}{Online}{38}{section*.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Documentation}{37}{section*.7}%
+\contentsline {subsection}{Documentation}{39}{section*.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Python Script Used in Data Extraction}{38}{appendix.A}%
+\contentsline {section}{\numberline {A}Python Script Used in Data Extraction}{40}{appendix.A}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Graph 1520-1680}{40}{appendix.B}%
+\contentsline {section}{\numberline {B}Graph 1520-1680}{42}{appendix.B}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C}Graph Prior 1600}{41}{appendix.C}%
+\contentsline {section}{\numberline {C}Graph Prior 1600}{43}{appendix.C}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D}Graph Post 1601}{42}{appendix.D}%
+\contentsline {section}{\numberline {D}Graph Post 1601}{44}{appendix.D}%
