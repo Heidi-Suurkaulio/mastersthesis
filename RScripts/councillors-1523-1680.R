@@ -50,3 +50,18 @@ post_1600_actual <- noble_ranks(post_1600)
 post_1600_actual
 post_1600_prop <- prop.table(noble_ranks(post_1600))
 post_1600_prop
+
+### handling the dataset during the reign of Christina
+reign_of_C <- filter(full_data, between(Appointed, 1644, 1654))
+
+#counting the age distributions of the appointed councillors
+summary(reign_of_C$Age)
+summary(full_data$Age)
+
+#plotting the age distribution
+#plot(density(reign_of_C$Age, na.rm = TRUE))
+#plot(density(full_data$Age, na.rm = TRUE))
+
+#filtering the youngest and oldest (see the pattern)
+#filter(full_data, Age == 74)
+#filter(reign_of_C, Age == 61)
