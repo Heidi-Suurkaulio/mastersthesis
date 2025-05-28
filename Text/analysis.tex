@@ -1,8 +1,8 @@
-\section{Family Ties Between 1520 and 1680}
-During the time period between 1520 and 1680 there were 257 men active in the Council of the Realm. As discussed earlier in subsection \ref{councilofrealm} the council consisted mostly of men with noble background. To quantify this: according to the dataset 236 of the 257 councillors (91.8\%) were part of the ancient nobility "uradel", and only approximately 5\% were of unknown or ignoble background, most of the time bishops or other clerics.  
+\section{Family Ties Between 1523 and 1680}
+During the time period between 1523 and 1680 there were 257 men active in the Council of the Realm. As discussed earlier in subsection \ref{councilofrealm} the council consisted mostly of men with noble background. To quantify this: according to the dataset 236 of the 257 councillors (91.8\%) were part of the ancient nobility "uradel", and only approximately 5\% were of unknown or ignoble background, most of the time bishops or other clerics.  
 
 \begin{table}
-	\caption{Absolute amount in different ranks}
+	\caption[Absolute amount in different ranks]{Absolute amount in different ranks (Data by \cite{councillorsDS}, statistics by author)}
 	\centering
 	\begin{tabular}{cccccc}
 		\hline
@@ -30,7 +30,7 @@ However, the king who appointed no new councillors was the son of John III: Sigi
 \begin{figure}
 	\includegraphics[scale=0.6]{councillorspermonarch.png}
 	\centering
-	\caption[Number of councillors appointed by each ruler between 1523-1680] {Number of councillors appointed by each monarch or regnant from 1523 to 1680. (\cite{councillorsDS}) From left to right G I: Gustavus I Vasa (1523-1560), E XIV: Eric XIV (1560-1568), J III: John III (1568-1592), Si: Sigismund (1592-1599), C IX: Charles IX (1599-1611), G II: Gustavus Adolphus (1611-1632), reg: regnant (1632-1644), Ch: Christina (1644-1654), C X: Carl X Gustav (1654-1660), reg: regnant (1660-1672) and C XI: Carles XI (1672-1697).}
+	\caption[Number of councillors appointed by each ruler between 1523-1680] {Number of councillors appointed by each monarch or regnant from 1523 to 1680. (Data by \cite{councillorsDS}, figure by author) From left to right G I: Gustavus I Vasa (1523-1560), E XIV: Eric XIV (1560-1568), J III: John III (1568-1592), Si: Sigismund (1592-1599), C IX: Charles IX (1599-1611), G II: Gustavus Adolphus (1611-1632), reg: regnant (1632-1644), Ch: Christina (1644-1654), C X: Carl X Gustav (1654-1660), reg: regnant (1660-1672) and C XI: Carles XI (1672-1697).}
 	\centering
 \end{figure}
 
@@ -106,21 +106,52 @@ Queen Christina was the daughter of the king Gustavus Adolphus and queen consort
 Due that Christina's father was frequently away from Sweden and the long period of the interregnum, the authority of the Council of the Realm had grown remarkably when Christina was enthroned. Contrary to the previous monarchs, she was forced to go for the Council to get councel, yet, the situation did not stay that way for long. In the words of Hakanen and Koskinen: 
 
 \begin{quote}
-	Christina played the high nobility at their own social network game rather than enter into open warfare with them. That is, she quickly created a large group of loyal supporters around her $\dots$
+	Christina played the high nobility at their own social network game rather than enter into open warfare with them. That is, she quickly created a large group of loyal supporters around her $\dots$\\
+	(\cite[p. 64]{HakanenAKoskinen2017})
 \end{quote}
 
-Furthermore, she appointed many new councillors to dilute the power of the original Council. By the year 1654 she had appointed 45 new councillors.\footcite[p. 64. ]{HakanenAKoskinen2017}
+Furthermore, she appointed many new councillors to dilute the power of the original Council. By the year 1654 she had appointed 45 new councillors.\footcite[p. 64.]{HakanenAKoskinen2017}
+
+As queen Christina notoriously appointed councillors to dilute the power of the old Council, did she favor any age group, perhaps young educated noblemen? To give an indicative answer to this question, I calculated the summary statistics on the age distribution on the councillors appointed by Christina, and the same statistics on the age distribution from the whole dataset. As we can see from the Tables \ref{councillorsages} and \ref{agesByChristina} the councillors appointed by Christina were the same age-range as the councillors appointed by all of the monarchs. In fact, the distributions seems fairly similar. However, in the whole dataset N (the number of observations excluding missing values) is 200, whereas in the part appointed by Christina N is 44, meaning that the distributions are not fully comparable.
+
+Typically the councillors were appointed in their late 30's (median 38, mean 39.6), also the councillors appointed by Christina were of similar age (median 37, mean 39.36). Overall, the youngest councillors appointed were only the age of 22 years. They were Sten Eriksson Lewenhaupt (Leijonhufvud) (id 118, 1518-1568), Per d.ä. Joakimsson Brahe (id 40, 1520-1590) and Gustaf Axelsson Baner (id 5, 1547-1600). The youngest councillors appointed by Christina were 25 years old Magnus Gabriel Jacobsson De la Gardie (id 56, 1622-1686) and Henrik Fransson von Thurn (id 221, 1628-1656).\footcite{councillorsDS}
+
+The oldest councillor to be appointed was Måns Svensson Some (id 187, 1495-1571). He was appointed in the age of 74, and served only two years in the Council before his death in 1571. The oldest councillor appointed by Christina was Konrad Falkenberg (id 61, 1591-1654) in the age of 61. He was appointed in 1652, and coincidentally also he died two years after his appointment in 1654.\footcite{councillorsDS} 
+
+\begin{table}
+	\caption[Summary statistics on the councillors ages of appointment]{Summary statistics on the councillors ages of appointment from the whole dataset (including the reign of Christina). NA meaning a missing value. N = 257 - 57 (Data from \cite{councillorsDS}, statistics by author)}
+	\label{councillorsages}
+	\centering
+	\begin{tabular}{c c c c c c c}
+		\hline
+		Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max. & NA's \\
+		\hline
+		22.0 & 33.0 & 38.0 & 39.6 & 45.0 & 74.0 & 57 \\
+		\hline
+	\end{tabular}
+	
+	\caption[Summary statistics on the ages of appointment from the councillors appointed by queen Christina]{Summary statistics on the ages of appointment from the councillors appointed by queen Christina. N = 45 - 1 (Data from \cite{councillorsDS}, statistics by author)}
+	\label{agesByChristina}
+	\centering
+	\begin{tabular}{c c c c c c c}
+		\hline
+		Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max. & NA's \\
+		\hline
+		25.00 & 32.75 & 37.00 & 39.36 & 45.75 & 61.00 & 1\\
+		\hline
+	\end{tabular}
+\end{table}
 
 The network of councillors appointed by queen Christina is displayed in Figure \ref{queenChristinaCouncillors}. As queen Christina's reign lasted for only ten years the graph is not comparable to the other larger graphs, despite that, it is interesting in its own right. The graph consist of 45 councillors, all of them which must have been close to queen Christina in one way or another.
 
 \begin{figure}	
 	\includegraphics[width=\linewidth]{councillors_1644-1654.png}
-	\caption[Councillors appointed by queen Christina]{A graph of councillors appointed by queen Christina between 1644 and 1654.(\cite{councillorsDS})}
+	\caption[Councillors appointed by queen Christina]{A graph of councillors appointed by queen Christina between 1644 and 1654.(Data by \cite{councillorsDS}, graph by author)}
 	\label{queenChristinaCouncillors}
 	\centering
 \end{figure}
 
-Overall, the network seems sparse, but, an interestingly clustered pattern can be found in the middle of the network. Eight councillors: Karl Mauritz Johansson Lewenhaupt (125), Gustaf Adolf Johansson Lewenhaupt (126), Gustaf Otto Gustafsson Stenbock (207), Fredrik Gustafssonare Stenbock (204), Erik Gustafssonall Stenbock (202), Bengt Gabrielsson Oxenstierna af Korsholm och Wasa (148), Gabriel Gabrielsson Oxenstierna af Korsholm och Wasa (154) and Hans Claesson Wachtmeister (240) are all related to each other direclty or indirectly. 
+Overall, the network seems sparse, but, an interestingly clustered pattern can be found in the middle of the network. Eight councillors: Karl Mauritz Johansson Lewenhaupt (id 125, 1620-1666), Gustaf Adolf Johansson Lewenhaupt (id 126, 1619-1656), Gustaf Otto Gustafsson Stenbock (id 207, 1614-1685), Fredrik Gustafssonare Stenbock (id 204, 1607-1642), Erik Gustafssonall Stenbock (id 202, 1612-1659), Bengt Gabrielsson Oxenstierna af Korsholm och Wasa (id 148, 1623-1702), Gabriel Gabrielsson Oxenstierna af Korsholm och Wasa (id 154, 1619-1672) and Hans Claesson Wachtmeister (id 240, 1609-1652) are all related to each other direclty or indirectly. 
 
 This tightly woven network seems to concentrate around the two brothers Gustaf Otto Gustafsson Stenbock and Erik Gustafssonall Stenbock. Due that they presumably had a significant position in the political life. What led them having this position?
 

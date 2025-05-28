@@ -1,36 +1,39 @@
 \section{Introduction}
-The aim of my master's thesis is to (re)construct and study a network of the family ties inside the Swedish Council of the Realm (\textit{Riksrådet}) from the early 16th century to the late 17th century. The study is conducted by creating a data structures and a visual representations of graphs depicting the family links. In my thesis \textit{historical network analysis} will be referred to as a computer-aided method. The work will be focused on roughly two main sectors: first of which is the theory and implementation of the actual network analysis, and the second one are the results from analyzing the given dataset.
+The aim of my master's thesis is to (re)construct and study a network of the family ties inside the Swedish Council of the Realm (\textit{Riksrådet}) from the early 16th century to the late 17th century. The study is conducted by creating data structures and visual representations of graphs depicting the family links. In my thesis \textit{historical network analysis} will be referred to as a computer-aided method. In my work I will be focusing mostly on roughly two main sectors: the first of which is the theory and implementation of the actual network analysis, and the second one is the results from analyzing the given dataset.
 
-In general the scope of this work is cross disciplinary and explorative. The use of programming and computational network analysis links this work directly to the field of \textit{digital humanities}. However, the time frame of this study (1520-1680) ties this work also to the more traditional field of \textit{early modern history}. My work can also be understood as a \textit{history of nobility}, and it also holds elements of \textit{political history}, due to the themes of authority, and the Council of the Realm as an influential political institution. Methodologically, the study is mostly macro-level quantitative study.
+In general, the scope of this work is cross disciplinary and explorative. The use of programming and computational network analysis links this work directly to the field of \textit{digital humanities}. However, the time frame of this study (1520-1680) ties this work also to the more traditional field of \textit{early modern history}. My work can also be understood as a \textit{history of nobility}, and it also holds elements of \textit{political history}, due to the themes of authority, and the Council of the Realm as an influential political institution. Methodologically, the study is mostly a macro-level quantitative study. 
 
-Studying patterns and events on the macro-level does sometimes lead to fascinating and compelling questions on the details of the subject matter. That was something what happened to me. While constructing the graphs, I ended up wondering the fates and lived lives behind the data points. Why was the year 1601 extremely dire for being a councillor? Why did councillor Hogenskild Nillson Bielke (1538-1605) got executed after serving 36 years in the Council of the Realm, while his contemporary Nils Göransson Gyllenstierna (1526-1601) survived all of the rivalries between Gustav Vasa's sons? What happened to the illegitimate son of Gustav II Adolf? Who were the favorites of queen Christina? These questions are not my research questions \textit{per se}, but they have shaped the structure of this work, and they will be answered in the latter sections.  
+Studying patterns and events on the macro-level does sometimes lead to fascinating and compelling questions about the details of the subject matter. That was something what happened to me. While constructing the graphs, I ended up wondering the fates and lived lives behind the data points. Why was the year 1601 extremely dire for being a councillor? Why did councillor Hogenskild Nillson Bielke (1538-1605) got executed after serving 36 years in the Council of the Realm, while his contemporary Nils Göransson Gyllenstierna (1526-1601) survived all of the rivalries between Gustav Vasa's sons? What happened to the illegitimate son of Gustav II Adolf? Who were the favorites of the  queen Christina? These questions are not my research questions \textit{per se}, but they have shaped the structure of this work, and they will be answered in the latter sections.   
 
-Overall, the early modern time period is extremely fascinating. Culturally it is distant from our times, and understanding it requires some imagination and empathizing. How did the individuals build their lives in the world that was torn by religious conflicts, and where hunger, epidemics and child mortality were regular tragedies? As we can still perceive the lingering sense of uncertainty or outright doom from the \textit{baroque} art of the time. 
+Overall, the early modern time period is extremely fascinating. Culturally it is distant from our times, and understanding it requires some imagination and empathizing. How did the individuals build their lives in the world that was torn by religious conflicts, and where hunger, epidemics and child mortality were regular tragedies? As we can still perceive the lingering sense of uncertainty or outright doom from the \textit{baroque} art of the time.  
 
-In the contingent world of early modern Sweden community and family networks provided safety. They were an integral part of the life in every estate, from the noblemen on the \textit{Riddarhuset} (palace of knights) to the poorest peasants.\footcite[pp. 27-28.]{hopesAndFearsIntro} In the context of noble houses the the family links were valued so high, that arranging festivities and hosting visiting relatives not only costed fortunes but also determined the architecture of their mansions.\footcite[pp. 185-189.]{hakanenAndKoskinen2020} Understanding the social networks of the time is a key element in understanding the politics, mentality and culture of the time period. 
+In the contingent world of early modern Sweden community and family networks provided safety. They were an integral part of the life in every estate, from the noblemen on the \textit{Riddarhuset} (palace of knights) to the poorest peasants.\footcite[pp. 27-28.]{hopesAndFearsIntro} In the context of noble houses the family links were valued so high, that arranging festivities and hosting visiting relatives not only costed fortunes but also determined the architecture of their mansions.\footcite[pp. 185-189.]{hakanenAndKoskinen2020} Understanding the social networks of the time is a key element in understanding the politics, mentality and culture of the time period.  
 
-This work is divided in four sections. An introduction will present the premises of this work, while the method–as a focal point of this work–is discussed separately in the longest section of this thesis. The third section is to lay out the results of the actual network analysis, and the last section collects everything together as a conclusion. The historical background and context of this work is presented both in the section for introduction and method. 
+This work is divided into four sections. An introduction will present the premises of this work, while the method–as a focal point of this work–is discussed separately in the longest section of this thesis. The third section is to lay out the results of the actual network analysis, and the last section collects everything together as a conclusion. The historical background and context of this work are presented both in the section for introduction and method. 
 
 \subsection{Research Questions}
 The research questions are:
 \begin{enumerate}
 	\item Can historical network analysis reveal new or unseen patterns in the affiliations between Swedish councillors of the Realm? \begin{itemize}
-		\item How dense is the network (how linked the council was in general)?
-		\item Are there any isolated nodes (councillors who have no relatives in the council)?
-		\item Can the graph be visually divided into clear subgraphs (is there a certain groups or 'houses' of related councillors)?
+		\item How dense is the network (how linked the Council was in general)?
+		\item Are there any isolated nodes (councillors who have no relatives in the Council)?
+		\item Can the graph be visually divided into clear sub graphs (is there a certain groups or 'houses' of related councillors)?
 	\end{itemize}	
-	\item What are the potential difficulties and pitfalls in the implementation and interpretation of historical network analysis in this specific dataset, and further in the field of pre-modern history? \begin{itemize}	
+	\item What are the potential difficulties and pitfalls in the implementation and interpretation of historical network analysis in this specific dataset, and further in the field of early modern history? \begin{itemize}	
 		\item To what extent can pre-processing the dataset for the network analysis be automated with a script?
 	\end{itemize}
 \end{enumerate} 
 
-The source material for this study is the \textit{Swedish Councillors of the Realm, 1523-1680} dataset, which also dictates the timespan of the study. The period is relatively long and momentous in Swedish history, including many important events, such as, adoption of hereditary kingship (1544), the conflicts between the sons of Gustav Vasa (from 1560's to early 1600's), thirty years war (from 1618 to 1648) and queen Christina abdicating the throne (1654).\footcite[pp. 8-9.]{personalAgency} These events and shifts obviously have had a significant impact on the ensemble and activities of the Swedish council of the realm. Yet, instead of event-history or lives of individual councillors, the focus of this study is on the macro level, in (re)constructing a visual and computational network model of the family relations between the councillors. A longer timespan is necessary in order to the generations of family links to accumulate enough to make a network meaningful to study.
-%TODO time period after medieval time and before the time of absolutism
-%TODO swedish age of greatness (different definitons in pohjoinen suurvalta and sveriges historia)
+The source material for this study is the \textit{Swedish Councillors of the Realm, 1523-1680} dataset, which also dictates the timespan of this study. The period is relatively long and momentous in Swedish history, including many important events, such as, adoption of hereditary kingship in 1544, the conflicts between the sons of Gustav Vasa from 1560's to early 1600's, the Thirty Years War between 1618 and 1648, and queen Christina abdicating the throne in 1654.\footcite[pp. 8-9.]{personalAgency} These events and shifts obviously have had a significant impact on the ensemble and activities of the Swedish council of the realm. Yet, instead of event-history or 
+decisions made by the councillors in response to certain circumstances, the focus of this study is on the macro level, in (re)constructing a visual and computational graph of the family relations between the councillors. As seen in the subsection \ref{christina} and Figure \ref{queenChristinaCouncillors} a longer timespan is necessary in order to the generations of family links to accumulate enough to make a graph meaningful to study.
+
+The time period from 1523 to 1680 was remarkable for the religious, social and political changes. It has been retroactively divided in different epochs due the political and religious changes. According to Jan Melin and his colleagues year 1523 was the end of the (late) medieval times (\textit{medeltiden}) and beginning of the modern time (\textit{nya tiden}) in the kingdom of Sweden. On the religious sphere the 1523-1680 timespan was divided to the time of (the Lutheran) reformation (\textit{reformationtiden}, 1527-1600) and the time of orthodoxy (\textit{ortodoxins tid}, 1600-1700). The time of orthodoxy meaning a puritan reading of the Lutheran faith. Politically the time was divided to time of reformations (\textit{Reformationstiden} 1521-1611) and the Swedish age of greatness (\textit{Stormaktstiden}, 1611-1718). According the ruling royal houses the time was divided into time of Vasa dynasty (\textit{Vasaätten}, 1521/1523-1654) and the time of the house of Palatinate-Zweibrücken (\textit{Pfalziska ätten}, 1654-1720). The change happened when queen Christina abdicated the throne.\footcite[pp. 458-459.]{MelinEtAl}
+
+These divisions into different epochs are not fixed. For example in his classic monograph \textit{Pohjoinen Suurvalta} Petri Karonen divides the political epochs into the Vasa period (1521-1611) and the Swedish age of greatness (1620-1720).\footcite[pp. 7-9.]{pSuurvalta} Using these divisions we must remember that they were not created or emphasized by the contemporaries. However they are a helpful tool in categorizing and understanding the characteristics of the time periods.
 
 This study is conducted with a quantitative dataset instead of more traditional way of qualitative text analysis. Therefore, the source criticism is done for the dataset as a whole. For example, by assessing the sources of the dataset, looking for possible human errors in the data and considering the original purpose and use of the dataset. The source criticism is discussed further in the subsection \ref{sources}.
 
-The basis and context of this study will lay on the pre-existing literature concerning the Swedish Council of the Realm. Previous historical research will form the base for deciding the parameters for the network model (graph), and direct the choices for the data processing. These decisions include, for instance, whether or not draw the link between brothers if they are already connected to same father present in the graph. These decisions need to be based on the prior knowledge on the social relations during the pre-modern era. 
+The basis and context of this thesis will lay on the pre-existing literature concerning the Swedish Council of the Realm and the Swedish kingodom in the early modern period. Previous historical research and prior knowledge on the early modern social realm will form the base for the parameters of the graphs, and direct the choices for the data processing. These decisions include, for instance, the choice between directed or undirected graph, or whether or not to draw the link between brothers if they are already connected to same father present in the graph. These decisions are explicated in the subsection \ref{network}.
 
 According to historians Miia Kuha and Petri Karonen, majority of historiography concerning Nordic countries in the early modern period is written in the national languages, in this case, Swedish or Finnish.\footcite[p. 6.]{kuha-ja-karonen} To make the subject, dataset and method more approachable for international–or at least Nordic–scientific community, I decided to write this work in English. This is a natural option also because English is a language widely used in the field of programming and statistics.
 
@@ -58,7 +61,8 @@ All in all, computer-aided historical network analysis is somewhat rare compared
 \subsection{the Council of the Realm}
 \label{councilofrealm}
 \begin{quote}
-	The position of the councillors of the realm was well recognized by the whole society. They were an elite group which enjoyed formal position in the power structure. Their job was to help the monarch reach decisions.\footcite[p. 26.]{agencyAndStateBuilding}
+	The position of the councillors of the realm was well recognized by the whole society. They were an elite group which enjoyed formal position in the power structure. Their job was to help the monarch reach decisions.\\
+	(\cite[p. 26.]{agencyAndStateBuilding})
 \end{quote}
 
 In the early modern Sweden the Council of the Realm (Privy Council, swe. Riksrådet, fi. valtaneuvosto) was to give council to the Royal Majesty (monarch, king or queen) on decision making. The Council consisted of noblemen loyal to the monarch. The councillors held a signifficant power and authority on the realm, yet, the Council did not have the ability to make decisions bypassing or opposing the monarch. Ideally decisions would be made in concensus with the king or queen and the Council.\footcites[pp. 13-14,]{hopesAndFearsIntro}[pp. 47-50.]{HakanenAKoskinen2017}
@@ -76,22 +80,22 @@ After the death of Charles IX in 1611, Charles' oldest son Gustavus Adolphus (Gu
 The position of the nobility and the Council started to decline drastically after the Charles XI's (1655-1697) succession of the throne in 1672. In the Diet of 1680 the monarch practically retracted the status of the Council. In 1681 the Council of the Realm was renamed the \textit{Royal Council} (swe. Kungligt råd, fi. kuninkaallinen neuvos). Concurrently, the Great Reduction was being implemented, meaning that the fiefs\footnote{Lands given to the aristocracy.} were reclaimed to the state. The reign of Charles XI is retroactively called the Age of Absolutims in Sweden.\footcites[pp. 289-295,]{pSuurvalta}[pp. 8-9.]{personalAgency} Finally, in the 18th century the role of the Council steadily declined further, and it was disestablished during the reign of Gustavus III (1772-1792).\footcite[p. 14.]{hopesAndFearsIntro}
 
 \begin{table}
-	\caption[Parameters on the number of councillors between 1520-1680]{Parameters on the number of councillors between 1520-1680.(\cite{councillorsDS}) Calclutaed with R script: https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/RScripts}
+	\caption[Summary statistics on the number of councillors between 1520-1680]{Summary statistics on the number of councillors between 1520-1680.(Data by \cite{councillorsDS}, statistics by author)}
 	\label{tab:councillors}
 	\centering
-\begin{tabular}{c c c c c c}
-	\hline
-	Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max.\\
-	\hline
-	1.00 & 19.00 & 23.00 & 24.29 & 27.00 & 48.00\\
-	\hline
-\end{tabular}
+	\begin{tabular}{c c c c c c}
+		\hline
+		Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max.\\
+		\hline
+		1.00 & 19.00 & 23.00 & 24.29 & 27.00 & 48.00\\
+		\hline
+	\end{tabular}
 \end{table}
 
 \begin{figure}[h]
 	\includegraphics[width=\linewidth]{councillorsPerYear.png}
 	\centering
-	\caption[The changes of the number of councillors per each year 1520-1680]{The changes of the number of councillors per each year.(\cite{councillorsDS}) Plotted with R script: https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/RScripts} 
+	\caption[The changes of the number of councillors per each year 1520-1680]{The changes of the number of councillors per each year. (Data by \cite{councillorsDS}, figure by author)} 
 	\centering
 	\label{fig:peryear}
 \end{figure}
@@ -110,7 +114,7 @@ In early modern Sweden the monarch was the highest authority. Practically the de
 \label{sources}
 Since this work is conducted with pre-collected dataset, this work can be vaguely categorized as secondary analysis. Secondary analysis meaning re-analyzing the data with new research questions or approaches, while primary analysis involves the collection of the data. Secondary analysis can also be discerned from meta analysis, which means comparing multiple previous studies (usually with quantitative methods) to create a synthesis on a certain question.\footcite[pp. 4-5.]{meta-analysis} 
 
-On the contrary in their articles Kimmo Elo and Olli Kleemola or Elo and Tiina Lintunen apply a network analysis on their own primary datasets.\footcites{eloAklee15}{LintunenAndElo2019} However, in the case of this work the benefit of doing secondary analysis is that the focus can be on the implementation and assessment of the method. Furthermore, the existing dataset will be automatically and manually re-examined for possible errors in the process, as will be discussed soon. 
+On the contrary in their articles Kimmo Elo and Olli Kleemola or Kimmo Elo and Tiina Lintunen apply a network analysis on their own primary datasets.\footcites{eloAklee15}{LintunenAndElo2019} However, in the case of this work the benefit of doing secondary analysis is that the focus can be on the implementation and assessment of the method. Furthermore, the existing dataset will be automatically and manually re-examined for possible errors in the process, as will be discussed soon. 
 
 As mentioned earlier, this work is based on the \textit{Swedish councillors of the Realm, 1523-1680} -dataset authored by Marko Hakanen and Ulla Koskinen. The dataset was published in 2017 and can be found in Digital repository of University of Jyväskylä under the license CC BY 4.0. The dataset was collected as a part of the research conducted for the anthology \textit{Personal Agency at the Swedish Age of Greatness 1560–1720}.
 
