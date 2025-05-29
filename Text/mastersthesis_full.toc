@@ -11,44 +11,44 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.4}Sources}{10}{subsection.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Method}{15}{section.2}%
+\contentsline {section}{\numberline {2}Method}{16}{section.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Defining the Network}{15}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.1}Defining the Network}{16}{subsection.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Implementation of the Network Analysis}{17}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}Implementation of the Network Analysis}{18}{subsection.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.2.1}Test Run}{18}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.1}Test Run}{19}{subsubsection.2.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}Fitting Modern Model on a Historical Time Period}{21}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Fitting Modern Model on a Historical Time Period}{22}{subsection.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4}The Script}{27}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}The Script}{28}{subsection.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.1}Testing the Script}{28}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.1}Testing the Script}{29}{subsubsection.2.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Family Ties Between 1523 and 1680}{29}{section.3}%
+\contentsline {section}{\numberline {3}Family Ties Between 1523 and 1680}{30}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Prior to Year 1600}{31}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}Prior to Year 1600}{33}{subsection.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.1}The Last Man Standing: Nils Gyllenstierna}{32}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}The Last Man Standing: Nils Gyllenstierna}{34}{subsubsection.3.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Post Duke Charles' Revenge}{33}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Post Duke Charles' Revenge}{36}{subsection.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}In the Court of Queen Christina}{34}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}In the Court of Queen Christina}{37}{subsection.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Conclusion}{38}{section.4}%
+\contentsline {section}{\numberline {4}Conclusion}{41}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{40}{section*.4}%
+\contentsline {section}{References}{43}{section*.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Literature}{40}{section*.5}%
+\contentsline {subsection}{Literature}{43}{section*.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Online}{43}{section*.6}%
+\contentsline {subsection}{Online}{46}{section*.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Documentation}{43}{section*.7}%
+\contentsline {subsection}{Documentation}{47}{section*.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Python Script Used in Data Extraction}{44}{appendix.A}%
+\contentsline {section}{\numberline {A}Python Script Used in Data Extraction}{48}{appendix.A}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Graph 1520-1680}{46}{appendix.B}%
+\contentsline {section}{\numberline {B}Graph 1520-1680}{50}{appendix.B}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C}Graph Prior 1600}{47}{appendix.C}%
+\contentsline {section}{\numberline {C}Graph Prior 1600}{51}{appendix.C}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D}Graph Post 1601}{48}{appendix.D}%
+\contentsline {section}{\numberline {D}Graph Post 1601}{52}{appendix.D}%

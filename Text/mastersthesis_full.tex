@@ -3,7 +3,12 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
 \usepackage{xr} %cross references
-\usepackage[most]{tcolorbox} %for the abstract-page
+
+% These are used in the preable (which is by Birgitta Burger)
+\usepackage{tabularx}
+\usepackage{hhline}
+
+\usepackage[most]{tcolorbox} %for scaling
 \usepackage{graphicx} %for resizing table
 \usepackage{rotating} %for rotating table
 \usepackage{hyperref} %for links
@@ -22,12 +27,10 @@
 	type=inbook
 }
 
-\title{Game of Networks: Family Ties Within the Swedish Council of the Realm (1520-1680)}
+\title{Game of Networks: Family Ties Within the Swedish Council of the Realm (1523-1680)}
 \begin{document}
 	\pagenumbering{roman}
-	\input{cover.tex}
-	\newpage
-	\input{abstract.tex}
+	\input{frontmatter.tex}
 	\newpage
 	\maketitle
 	\tableofcontents

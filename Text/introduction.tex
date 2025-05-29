@@ -92,7 +92,7 @@ The position of the nobility and the Council started to decline drastically afte
 	\end{tabular}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}
 	\includegraphics[width=\linewidth]{councillorsPerYear.png}
 	\centering
 	\caption[The changes of the number of councillors per each year 1520-1680]{The changes of the number of councillors per each year. (Data by \cite{councillorsDS}, figure by author)} 
@@ -140,7 +140,18 @@ Missing data directly affects the observation of the family affiliations. Howeve
 
 Generally it can be assessed that family links found in the dataset represents the \textit{lower limit} of the possible family ties. Bayesian methods could be used to further estimate the amount of family ties left unnoticed from the modern scholars.
 
-Lastly, as the relatively large dataset is compiled by humans, it leaves some room for typos and errors. While producing the first experimental graph of the dataset, some empty data points were found. These "ghosts" were nodes with only id number and one or two links to the other councillors. All in all there were four "ghosts" with the id numbers 147 (linked to 18 and 152), 215 (linked to 217), 249 (linked to 269) and 254 (linked to 94). With the help of Marko Hakanen it was resolved that those "ghost" nodes were data points removed from the dataset as the authors found out they have not been official councillors, however, some references to their id numbers had been left to the dataset by accident. The "ghost" nodes will be removed from the latter graphs.
+Lastly, as the relatively large dataset is compiled by humans, it leaves some room for typos and errors. While producing the first experimental graph of the dataset, some empty data points were found. These "ghosts" were nodes with only an id number, and one or two links to the other councillors. All in all, there were four "ghosts" with the id numbers 147 (linked to 18 and 152), 215 (linked to 217), 249 (linked to 269) and 254 (linked to 94). With the help of Marko Hakanen it was resolved that those "ghost" nodes were data points removed from the dataset as the authors found out they have not been official councillors, however, some references to their id numbers had been left to the dataset by accident. The "ghost" nodes will be automatically excluded from the latter graphs.
+
+While writing the actual analysis for this thesis, I also came across a question, if counting the Scottish baron Robert Douglas (id 58, 1611-1662) as a councillor was in fact accurate. Robert Douglas was born in Standingstone Scotland in 17th of March 1611. He joined the Swedish army with his two brothers in the early 1630's. He was proven to be successful in his military career, and landed notorious positions in the Swedish army and administration. But according to Kugelberg and colleagues he never became a councillor.\footcite{sbl_robert_douglas}
+
+\begin{quote}
+	D.[Douglas] besatt även stor duglighet på det civila och administrativa området, varför han ofta användes på andra än rent militära poster. Riksråd blev han dock ej, kanske bl. a. emedan han var reformert.\\
+	(\cite{sbl_robert_douglas})\\
+	
+	[Douglas was competent in working on the civil and administrative tasks, and therefore he held positions outside the military. He never became a councillor, maybe because he was a reformer. (Could also mean a religious reformist)]
+\end{quote}
+
+However, according to the Councillors dataset, Douglas was appointed to the Council in 1657.\footcite{councillorsDS} This may be caused by an error in the process of collecting the dataset, or an error or conflicting information in the source material, maybe even in the writing of Kugelberg and colleagues. Whether or not Robert Douglas was an actual member of the Council, he still held a significant position amongst the Swedish elite as a Scottish baron.
 
 \begin{sidewaystable}
 	\caption[Example rows of the dataset]{Example rows of the dataset: Gyllenhorn, Joen Olsson and Natt och Dag, Måns Johansson (\cite{councillorsDS})}
