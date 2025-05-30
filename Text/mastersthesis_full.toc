@@ -35,20 +35,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3}In the Court of Queen Christina}{37}{subsection.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Conclusion}{41}{section.4}%
+\contentsline {section}{\numberline {4}Conclusion}{42}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{43}{section*.4}%
+\contentsline {section}{References}{44}{section*.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Literature}{43}{section*.5}%
+\contentsline {subsection}{Literature}{44}{section*.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Online}{46}{section*.6}%
+\contentsline {subsection}{Online}{47}{section*.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Documentation}{47}{section*.7}%
+\contentsline {subsection}{Documentation}{48}{section*.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Python Script Used in Data Extraction}{48}{appendix.A}%
+\contentsline {section}{\numberline {A}Python Script Used in Data Extraction}{49}{appendix.A}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Graph 1520-1680}{50}{appendix.B}%
+\contentsline {section}{\numberline {B}Graph 1520-1680}{51}{appendix.B}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C}Graph Prior 1600}{51}{appendix.C}%
+\contentsline {section}{\numberline {C}Graph Prior 1600}{52}{appendix.C}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D}Graph Post 1601}{52}{appendix.D}%
+\contentsline {section}{\numberline {D}Graph Post 1601}{53}{appendix.D}%
