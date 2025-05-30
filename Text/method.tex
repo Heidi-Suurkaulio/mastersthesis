@@ -3,29 +3,40 @@
 
 (TODO the history of network analysis)
 %TODO computer aided network analysis <- distinction between 'verkostotutkimus' mentioned in Juuso Marttila's thesis. 
-My method is computer aided (social) network analysis. It is one of the most implemented methods in the field of digital humanities. Generally network analysis has other more everyday applications, such as, the analysis of the internet as a network in the field of technology. Quite a few textbooks have been written on network analysis.
- 
+My method is computer aided social network analysis. It is one of the most implemented methods in the field of digital humanities. According to  
 
-Even though things like machine learning and artificial intelligence (AI) are particularly popular and to a certain degree hyped at the time of writing, it is important to assess and understand the fundamentals and basics of digital and computational methods. Obviously, it is easier to understand simpler models, and therefore ask important questions. Those questions are for instance: What are the premises for this model? What kind of data is suitable for this model? What kind of interpretations can be made from the results? What is the potential problem, how to fix or adjust the model if something goes wrong or unexpectedly? On the following subsection I will go through the basis of the model.
+Quite a few textbooks have been written on (social) network analysis.\footcites[See e. g. ][or Krishna Raj P. M., Ankith Mohan and K. G. Srinivasa \textit{Practical Social Network Analysis with Python} or Xiaoming Fu et al. \textit{Social Network Analysis: Interdisciplinary Approaches and Case Studies}.]{huhtamakiEtAl}
+
+To give some examples of the more qualitative side of method: the doctoral dissertations of both historian Marko Hakanen and historian Mirkka Lappalainen have been written using the more theoretical and qualitative methods of network analysis. Marko Hakanen studied the network of clients [lower ranking supporters] around the Count Per Brahe in the 17th century Sweden.\footcite{hakanen11} Mirkka Lappalainen on the other hand researched the Creuz family in the 17th century Sweden (and Finland).\footcite{lappalainen05}
+
+Alongside these dissertations a master's thesis from the University of Jyväskylä Department of History and Ethnology deserves to be mentioned. In his thesis Jesse Kananen studied the of correspondence networks the rector of the Jyväskylä Seminar Karl Gabriel Leinberg. For his analysis Kananen has collected a remarkable sized dataset of 1147 letters from 487 contacts. Kananen also approaches the subject with a more qualitative stance of social network analysis.\footcite{kananen18}
+
+Besides the subject matter, the inherent form of the graph separates our works. The dataset collected by Kananen forms an \textbf{egocentric network}, which means a kind of star shaped network with the one node on the center connected to each node on the sides. However, the links between the nodes on the sides are not taken into account (most of the time).\footcite[pp. 22-23.]{kananen18}
+
+Despite on the quantitative sphere, the method in my thesis is still fairly simple and completely explainable. As things like machine learning and artificial intelligence (AI) are particularly popular and to a certain degree hyped at the time of writing, it is important to assess and understand the fundamentals and basics of digital and computational methods. Obviously, it is easier to understand simpler models, and therefore ask important questions. Those questions are for instance: What are the premises for this model? What kind of data is suitable for this model? What kind of interpretations can be made from the results? What is the potential problem, how to fix or adjust the model if something goes wrong or unexpectedly? On the following subsection I will go through the basis of the model.
 
 \subsection{Defining the Network}
 \label{network}
-Network analysis combines mathematics, statistics and social scineces. Primarily it is based on the mathematical graph theory. A graph is a representation of the network. Graph includes nodes (also colled vertice) and edges (also called links and connections).
+Network analysis combines mathematics, statistics and social sciences. Primarily it is based on the mathematical graph theory. A graph is a representation of the network. Graph includes \textbf{nodes} (also called vertices) and \textbf{edges} (also called links and connections).\footcites[p. 247, 248-249.]{huhtamakiEtAl}[pp. vi-vii]{RajPM2018a} If an edge exist between nodes, they are called as \textbf{neighbors}.\footcite[p. vii]{RajPM2018a}
 
 \begin{figure}
 	\includegraphics[scale=0.25]{example_network.drawio.png}
 	\centering
-	\caption{A sample from the graph} 
+	\caption[A sample from the graph]{A sample from the graph (Data by \cite{councillorsDS} graph by author)} 
 	\centering
 	\label{samplegraph}
 \end{figure}
-In this context the graph's nodes depict individual councillors with the input of name and id number. Correspondingly the edges represent the kinships between two nodes. For instance, in Figure \ref{samplegraph} we can see that Johan Bengtsson (Schroderus) Skytte (id 184) is Bengt Johansson Skytte's (id 183) father, and a maternal grandfather for Johan Göransson Gyllenstierna (id 90) and Göran Göransson Gyllenstierna (id 87). Johan and Göran Göransson are brothers, however, their father is not mentioned in the dataset. Göran Göransson also has further links in the network. \footcite{councillorsDS}
+In this context the graph's nodes depict individual councillors with the input of name and id number. Correspondingly the edges represent the kinships between two nodes. For instance, in Figure \ref{samplegraph} we can see that Johan Bengtsson (Schroderus) Skytte (id 184) is Bengt Johansson Skytte's (id 183) father, and a maternal grandfather for Johan Göransson Gyllenstierna (id 90) and Göran Göransson Gyllenstierna (id 87). Johan and Göran Göransson are brothers, however, their father is not mentioned in the dataset. Göran Göransson also has further links in the network.
+
+The node depicting Johan Bengtsson (Schroderus) Skytte (id 184) is a neighbor to all of the other nodes. On the contrary the node depicting Bengt Johansson Skytte (id 183) is not neighbor to Johan Göransson Gyllenstierna (id 90) or Göran Göransson Gyllenstierna (id 87). They are linked indirectly, neighbor's neighbors or formally second-order neighbors or distance two neighbors. 
+
+A graph can be \textbf{directed} or \textbf{undirected}. In a directed graph the edges have directions, like in a correspondence network a letter has a sender and a receiver. The directions are marked with an arrow. In undirected graphs the edges are bidirectional [two way], for example a relationship between two brothers can be understood as undirected. Directed graphs have more features and a more complex structures, for instance, the degrees of inbound and outbound edges can be counted separately.\footcite[pp. 1-2.]{RajPM2018} For simplicity, the graphs presented in this work are undirected.
 
 Calculating different statistics is a crucial part of the network analysis. One of the most important measures is the \textbf{node degree}. The node degree simply means the number of edges adjoined to a specific node.\footcite[pp. 2-3.]{RajPM2018} For example, the degree of the node depicting Johan Bengtsson (Schroderus) Skytte (id 184) is three, and the degree of the node depicting Bengt Johansson Skytte (id 183) is one. 
 
 The \textbf{average degree} is the mean of all the node degrees of the specific graph. It is calculated by adding all the node degrees and dividing the sum with the number of nodes.\footcite[pp. 3-4.]{RajPM2018} In the case of this study, the average degree describes the average number of direct family links councillors had within the Council. The average degree of Figure \ref{samplegraph} is $\frac{1 + 3 + 2 + 3}{4} = 2.25$.
 
-The \textbf{density} of the network is also based on the node degrees. In a dense network almost every node is connected to each other, but a sparse graph has just a few edges between the nodes. The density is calculated by dividing the number of actual edges with the mamximum number of edges. The scale of density is from 0 to 1, 1 implying a \textbf{complete graph}. In the complete graph each node is adjoined to each other node.\footcite[pp. 5-6.]{RajPM2018} In pratice, density is probably not the most depicting parameter of social networks because it is heavily dependant on the size of the network. 
+The \textbf{density} of the network is also based on the node degrees. In a dense network almost every node is connected to each other, but a sparse graph has just a few edges between the nodes. The density is calculated by dividing the number of actual edges with the maximum number of edges. The scale of density is from 0 to 1, 1 implying a \textbf{complete graph}. In the complete graph each node is adjoined to each other node.\footcite[pp. 5-6.]{RajPM2018} In practice, density is probably not the most depicting parameter of social networks because it is heavily dependant on the size of the network. 
 
 The maximum edges–meaning the amount of all possible edges–increases rapidly with the number of nodes. Formally, the maximum edges follows the \textit{binomial coefficient}. The formula being:\footcites[p. 16.]{laininen2002}[pp. 5-6.]{RajPM2018}
 \begin{equation*}
@@ -37,9 +48,9 @@ In this case $k = 2$, because two nodes share one edge. The variable n is the am
 \end{equation*}
 or \texttt{choose(257,2)} with R.
 
-In practice the rapidly growing amount of possible edges makes it inefficient to compare two graphs of different size. The number of possible edges in a graph with 100 nodes is 4 950 and in a graph with 101 nodes it is 5 050 a difference of 100 possible edges. In the context of social networks the difference is signifficant.
+In practice the rapidly growing amount of possible edges makes it inefficient to compare two graphs of different size. The number of possible edges in a graph with 100 nodes is 4 950 and in a graph with 101 nodes it is 5 050 a difference of 100 possible edges. In the context of social networks the difference is significant.
 
-Another important factor is whether the graph is \textbf{directed} or \textbf{undirected}. In directed graph the edges have directions, like in the communication networks a message has a sender and a receiver. The directions are marked with an arrow. In undirected graphs the edges are bidirectional (two way), for example, a relationship between two brothers can be understood as undirected. Directed graphs have more features and a more complex structures, for instance, the degrees of inbound and outbound edges can be counted separately. For sipmlicity, the graphs presented in this work are undirected.
+As structures graphs hold a plethora of further possibilities in representing data. For example, attributes like \textbf{weight} or \textbf{type} could be added to the graph's edges. Weight indicates the strength of the connection, in this case it could mean that a father's tie to son is stronger than the cousins tie with each other. Type indicates the nature of the relationship, such as, brother or son-in-law. The weights and types can be used in categorizing the network or counting statistics. A graph with weighted edges is called \textbf{weighted graph}.\footcite[pp. 11-12.]{RajPM2018} For simplicity the graphs presented in this work are unweighted and do not hold any attributes on the edges. 
 
 \subsection{Implementation of the Network Analysis}
 I use the combination of Python programming language and Gephi software in the data processing and analysis. Python is used for extracting the data from the councillors-dataset and formulating it in the right format: readable for Gephi. Whereas the actual network analysis: visualization and calculating statistics, is performed with Gephi. 
@@ -52,13 +63,14 @@ As graphs are structures commonly used in programming, it would have been possib
 
 Gephi is a software for network visualization and analysis. It contains tools for manipulating, filtering, clustering and visualizing the graph. It has built in appliances for fixing errors in data and calculating necessary statistics.\footcite{gephi} Gephi reads data from text format (comma separated values .csv) or Microsoft Excel tables (XLSX), and Gephi projects are saved as .gephi files. The processed graphs and data can be exported as images or tables.  
 
-Nonetheless, Gephi does have some weaknesses. It is not always the most intuitive to use, and especially the visual configurations of the graph causes some issues. I have encountered difficulties with the node labels (the councilor's name next to the node). Sometimes the problems lies in the Gephi settings, but if the whole software crashes when trying to make the node labels visible, the problem lies within the software itself and should be solved when starting the program.\footnote{For Linux environments opening Gephi from command line with command "LIBGL\_ALWAYS\_SOFTWARE=1 ./gephi" can sometimes help.} 
+Nonetheless, Gephi does have some weaknesses. It is not always the most intuitive to use, and especially the visual configurations of the graph causes some issues. I have encountered difficulties with the node labels (the councilor's name next to the node). Sometimes the problems lies in the Gephi settings, but if the whole software crashes when trying to make the node labels visible, the problem lies deep within the software itself. It is most likely caused because Gephi tries to connect to a non-existent graphic card. The problem must be solved while starting the program.\footnote{For Linux environments opening Gephi from command line with command "LIBGL\_ALWAYS\_SOFTWARE=1 ./gephi" can sometimes help.} 
 
-Lastly, I use R programming language and environment for calculations and statistical analysis. R is a language and platform particularily designed for statistical analysis. It contains tools and ready-made functions for efficiently calculating and plotting statistical data.\footcite{R} The language is widely used amongst scientists. 
+Lastly, I use R programming language and environment for calculations and statistical analysis. R is a language and platform particularly designed for statistical analysis. It contains tools and ready-made functions for efficiently calculating and plotting statistical data.\footcite{R} The language is widely used amongst scientists. 
 
 All of these tools are open source and free to download. In the name of replicability and transparency, all scripts written for this work available on my GitHub page.\footnote{\url{https://github.com/Heidi-Suurkaulio/mastersthesis}}
 
-Basically the steps of network analysis are : \begin{enumerate}
+Following and modifying the steps of network analysis given by Huhtamäki and Parviainen, I listed the following six  basic steps in network analysis.\footcite[p. 258]{huhtamakiEtAl} 
+The basic steps are : \begin{enumerate}
 	\item Choosing the subject and data
 	\item Pre processing the data for the network analysis
 	\item Constructing the graph and finding possible issues and errors 
@@ -66,11 +78,9 @@ Basically the steps of network analysis are : \begin{enumerate}
 	\item Deciding the layout (algorithm)
 	\item Doing the interpretations
 \end{enumerate}
-However, the analysis is not that straightforward, sometimes the steps 2 and 3 must be repeated and re-repeated. Yet, on some circumstances the graph is not visualized or the statistics are not deemed important. These steps will be discussed in practice below.
+In practice the analysis is not that straightforward, sometimes the steps 2 and 3 must be repeated and re-repeated. Yet, on some circumstances the graph is not visualized or the statistics are not deemed important. These steps will be discussed in practice below.
 
 \subsubsection{Test Run}
-%TODO fix councillor / councillor typo
-
 To draft the structure of the graph and understand the nuances of the given data, a test run was carried out. The test run was done with a simple Python script, and no attention was paid to the temporal aspects of the network or the potential directions within the graph. The script and Gephi project used, and the visualization of the graph of the test run is available in GitHub in the TestRun folder\footnote{\url{https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/TestRun}}
 
 The data processing was started by manually cleaning the data in LibreOffice Calc (equivalent to Microsoft Excel). The columns and rows containing information of the source material of the dataset and councillor's years active were removed. That made the structure of the data coherent and easier to manipulate with the Python script. The manually cleaned data is exported as .csv (comma separated values) file. The .csv file's header (the first line of the file) should be modified so that the column name "No." is changed to "Id" and "Family members in the council of the realm" is changed to "Family", the first one can cause an error if referenced in the Python code, the latter is inconveniently long.
@@ -104,24 +114,24 @@ The script itself reads the data from the .csv file. The connections between the
 	\end{tabular}
 \end{table}
 
-These .csv files are readable for Gephi. The outcome was an undirected graph of the councillors' affiliation network that had accumulated during the 160 years. The graph consisted of 261 nodes (257 real + 4 "ghosts") and 372 edges (including self loops and "ghost" nodes). The test run revealed three problems within the graph: the emergence of the empty "ghost" nodes, parallel edges and thirdly self loops. 
+These .csv files are readable for Gephi. The outcome was an undirected graph of the councillors' affiliation network that had accumulated during the 160 years. The graph consisted of 261 nodes (257 real + 4 "ghosts") and 372 edges (including self loops and "ghost" nodes). The test run revealed three problems within the graph: the emergence of the empty "ghost" nodes, \textbf{parallel edges} and thirdly \textbf{self loops}. 
 
 The "ghost" nodes were excess nodes with no name and only an id number and one or two connections in the graph. They were due to the references to the data points removed from the original dataset, and therefore can be ignored. The ghosts are discussed further in the subsection \ref{sources}. However, the more essential problem were parallel edges and self loops.
 
-The parallel edges occur because one relationship, such as father and son, is sometimes marked parallel in the dataset. For example, in the case of Göran Göransson Gyllenstierna (id 87) the relatives are "Maternal Grandfather 184, Brother 90, Father-in-law 3, ...", and the same relationship is found in his grandfather's Johan Bengtsson (Schroderus) Skytte's (id 184) links: "Son 183, Grandson through daughter 87". Yet, the connection to Göran Göransson's brother Johan Göransson Gyllenstierna (id 90) is not marked in the grandfathers links. This means that the node of Göran Göransson Gyllenstierna (id 87) has one excess link compared to his brother's node. The case is visualized in the Figure 2.
+If multiple edges share the same source and destination nodes, they are called parallel edges.\footcite[pp. 14-15.]{RajPM2018} These occur because one relationship, such as father and son, is sometimes marked parallel in the dataset. For example, in the case of Göran Göransson Gyllenstierna (id 87) the relatives are "Maternal Grandfather 184, Brother 90, Father-in-law 3, ...", and the same relationship is found in his grandfather's Johan Bengtsson (Schroderus) Skytte's (id 184) links: "Son 183, Grandson through daughter 87". Yet, the connection to Göran Göransson's brother Johan Göransson Gyllenstierna (id 90) is not marked in the grandfathers links. This means that the node of Göran Göransson Gyllenstierna (id 87) has one excess link compared to his brother's node. The case is visualized in the Figure 2.
 
 \begin{figure}[h]
 	\includegraphics[scale=0.20]{double_link.drawio.png}
 	\centering
-	\caption{Visualisation of the parallel edge and self loop} 
+	\caption{Visualization of the parallel edge and self loop} 
 	\centering
 \end{figure}
 
 These duplicate edges would cause bias to the calculation of the node degrees and any statistics based on them. A node degree is a sum of all the edges connected to one node, and if the relationships are inconsistently marked with one or two edges, the factually similar nodes would get different degrees. These inconsistent node degrees would accumulate when counting the average degrees an so forth. The problem of parallel edges is widely recognized in the field of network analysis, and therefore Gephi does have some builtin features for handling it.
 
-While importing data to Gephi (on Import Spreadsheet) the strategy for merging the parallel edges can be chosen. One option is, for example, placing the sum or average of the parallel edges in the edge's degree, yet using only one connection to to represent the edge in the graph. In this context a more simple solution was chosen, with the option "Firs" Gephi will use only the first connection between two nodes ignoring any latter ones. This will reduce the amount of connections from 698 found in the connections.csv to only 372.
+While importing data to Gephi (on Import Spreadsheet) the strategy for merging the parallel edges can be chosen. One option is, for example, placing the sum or average of the parallel edges in the edge's degree, yet using only one connection to to represent the edge in the graph. In this context a more simple solution was chosen, with the option "First" Gephi will use only the first connection between two nodes ignoring any latter ones. This will reduce the amount of connections from 698 found in the connections.csv to only 372.
 
-Self loops occur when one node has – for some reason or another – a connection to itself. Similarly to the parallel edges, they cause bias to the node degrees. In this graph a self loop can be found at least on the node with id 5 and id 90. In the case of id 5: Gustaf Axelsson Baner, his relatives are "Father 4, Father-in-law 217, Brother 9, Sons 5, 7, 8, 10, Sons-in-law 152 and 197", and similarly with id 90: Johan Göransson Gyllenstierna his family reads "Maternal Grandfather 184, Brother 90". These self loops are most likely caused by a typo in the dataset, because it is reasonable to assume that none is a son or brother to themselves.
+Self loops occur when one node has–for some reason or another–a connection to itself.\footcite[p. 13.]{RajPM2018} Similarly to the parallel edges, they cause bias to the node degrees. In this graph a self loop can be found at least on the node with id 5 and id 90. In the case of id 5: Gustaf Axelsson Baner, his relatives are "Father 4, Father-in-law 217, Brother 9, Sons 5, 7, 8, 10, Sons-in-law 152 and 197", and similarly with id 90: Johan Göransson Gyllenstierna his family reads "Maternal Grandfather 184, Brother 90". These self loops are most likely caused by a typo in the dataset, because it is reasonable to assume that none is a son or brother to themselves.
  
 Gephi does have a switch whether or not self loops are allowed in the graph, and it can automatically remove them based on the preference. The self loops are present in the test run graph alongside with the ghost nodes, yet those will be removed from the subsequent analysis. To highlight the ghosts they are colored cray, and the four nodes referred as an example here are colored red in the test run graph.
 
@@ -193,23 +203,23 @@ Some text books have depicted family trees as an examples of simple networks.\fo
 \subsection{The Script}
 For the conclusive analysis, I did some improvements to the Python script. The script is available in GitHub\footnote{\url{https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/PythonScript}} and can be found in Appendix \ref{script}. The viable version of the script is largely based on the test run script, however I added the functionality and did some refactoring; adjustments to make the code more slick. 
 
-The scirpt reads and prints data in exaclty same format as the previous one. The input data must be formatted similarily to the example of Table \ref{tab1} in the .csv format. However, the name of the input file is given as a command line parameter. The new functionality is that also the timerange of the network can be delimited with command line parameters. As a side-effect of the timerange functionality, the "ghost" nodes discussed in Chapter \ref{sources} are removed automatically.
+The scirpt reads and prints data in exactly same format as the previous one. The input data must be formatted similarily to the example of Table \ref{tab1} in the .csv format. However, the name of the input file is given as a command line parameter. The new functionality is that also the timerange of the network can be delimited with command line parameters. As a side-effect of the timerange functionality, the "ghost" nodes discussed in Chapter \ref{sources} are removed automatically.
 
 The format of the command is as follows: 
 \begin{verbatim}
 python data_sifter.py Councillors_of_the_Realm1523-1680.csv
 \end{verbatim}
 
-This produces the network from the original timeperiod given in the dataset. And, for example, command "\texttt{python data\_sifter.py <dataset.csv> prior 1650}" and "\texttt{python data\_sifter.py <dataset.csv> post 1590}" limits the networks to councillors and their relatives appointed before 1650 or after 1590. Lastly the command "\texttt{python data\_sifter.py <dataset.csv> 1540 1620}" delimits the network to councillors and their relatives appointed between 1540 and 1620.
+This produces the network from the original time period given in the dataset. And, for example, command "\texttt{python data\_sifter.py <dataset.csv> prior 1650}" and "\texttt{python data\_sifter.py <dataset.csv> post 1590}" limits the networks to councillors and their relatives appointed before 1650 or after 1590. Lastly the command "\texttt{python data\_sifter.py <dataset.csv> 1540 1620}" delimits the network to councillors and their relatives appointed between 1540 and 1620.
 
-When it comes to the script and the graph, I made some simplifications. The types of the relationships, such as brother, grandfather or , are not taken into account. Each relationship is taken from the dataset by the Id number and marked as an undirected edge with weight standard 1.0. This means that the graph does not separate blood relations from the relationships formed through marriages. As family ties per se have been mentioned to be important in the previous research, this graph depicts family ties as an abstraction.\footnote{TODO} 
+When it comes to the script and the graph, I made some simplifications. The types of the relationships, such as brother, grandfather or brother-in-law, are not taken into account. Each relationship is taken from the dataset by the Id number and marked as an undirected edge with weight standard 1.0. This means that the graph does not separate blood relations, the relationships formed through marriages or illegitimate blood relations. As in the previous research, the family ties in general are mentioned to have been valuable, this graph depicts family ties as an abstraction.\footnote{See subsection \ref{background}.} 
 
 The second simplification is that only the years of appointments are taken into account, but the years of death are not. Most of the time the position of the councillor was a lifelong.\footcite[TODO]{HakanenAKoskinen2017} So, the graph can not give a defined picture of the amount of the councillors active during a certain timeperiod. Basically the graph represents the family network of councillors appointed during certain timeperiod, and answers the question: \textit{Who were appointed to the Council and to which degree they were related to each other?} The script could be further develop into regognizing the type of the relationship and taking the years of death–the obvious end to the position–into account.
 
 \subsubsection{Testing the Script}
 Before anything else the script had to be tested. Testing is one of the most important–yet daunting–task in programming. Due the size and complexity of the Councillors dataset, the Python script is hard and ambiguous to test with the original data. To test the logic and behavior of the script I crated a small test dataset with simple dummy data. The test dataset is intentionally so small that it is readable by human. With the script the test dataset is available in GitHub.\footnote{\url{https://github.com/Heidi-Suurkaulio/mastersthesis/tree/main/PythonScript}} 
 
-The test dataset consist of 12 entries with values for name, Id number, (year of) appointment and family links. The names are represented by capital alphabets from A to L, and Ids are sequential numbers from 1 to 12. The values in appointment-column are numbers between 1000 and 1299, and there are intentionally four entries within every range of 100. The family links are represented by numbers found in the Ids except one which should be excluded by the script if everything works as planned. 
+The test dataset consist of 12 entries with values for name, id number, (year of) appointment and family links. The names are represented by capital alphabets from A to L, and ids are sequential numbers from 1 to 12. The values in appointment-column are numbers between 1000 and 1299, and there are intentionally four entries within every range of 100. The family links are represented by numbers found in the ids except one which should be excluded by the script if everything works as planned. 
 
 \begin{table}
 	\caption{Example of the test dataset}
@@ -225,6 +235,8 @@ The test dataset consist of 12 entries with values for name, Id number, (year of
 	\end{tabular}
 \end{table}
 
-When run with default setting the test dataset should produce 13 connections excluding the connection to the non-existent Id 30, as it does. Giving the range 1000-1999, 1100-1199 and 1200-1299 as arguments divides the dataset in the groups of four as intended. Lastly giving the "prior 1150" and "post 1138" as arguments reduces the amount of entries and connections as expected. With the small test dataset the algorithm should work as intended. Inconveniently, the accuracy of the connections still has to be checked manually. 
+When run with default setting the test dataset should produce 13 connections excluding the connection to the non-existent id 30, as it does. Giving the range 1000-1999, 1100-1199 and 1200-1299 as arguments divides the dataset in the groups of four as intended. Lastly giving the "prior 1150" and "post 1138" as arguments reduces the amount of entries and connections as expected. With the small test dataset the algorithm should work as intended. Inconveniently, the accuracy of the connections still has to be checked manually. 
 
-To review the results the script gives with the original dataset I used some simple R script to do dublicate checking.
+The graph consisting of 257 nodes is way too complex for a human eyes and brain to inspect thoroughly. Therefore I compared parts of the connections in the largest graph with the connections in the dataset. This means that samples of the actual graph is checked by human. 
+
+Lastly, to roughly review the results the script gives with the original dataset, I used some simple R script with R's ready-made functions to do some duplicate checking on the number of nodes. For the number prior to year 1600 the R script gave 111, and post year 1601 the R script gave 146. These are the R script gave the expected results.
